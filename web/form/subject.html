@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>수강 신청</title>
+  <link rel="stylesheet" href="../css/form.css">
+</head>
+<body>
+  <div id="wrap">
+    <form action="">
+      <fieldset>
+        <legend>수강 신청</legend>
+        <ul>
+          <li>
+            <label for="cid">학과번호</label>
+            <input type="text" id="cid" name="cid"
+              autofocus required>
+          </li>
+          <li>
+            <label for="sname">이름</label>
+            <input type="text" id="sname" name="sname"
+              value="우영우" readonly>
+          </li>
+          <li>
+            <label for="major">학과</label>
+            <select name="major" id="major">
+              <option value="컴퓨터공학과">컴퓨터공학과</option>
+              <option value="전자공학과">전자공학과</option>
+              <option value="기계공학과">기계공학과</option>
+              <option value="화학공학과">화학공학과</option>
+            </select>
+        </ul>
+      </fieldset>
+      <div>
+        <input type="submit" value="신청">
+        <input type="reset" value="취소">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

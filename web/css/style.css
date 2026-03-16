@@ -1,0 +1,17 @@
+h1 {color: blue;}
+h2 {color: green;}
+p {
+  font-family: "바탕체";
+  /* 1.2em은 기본 글자 크기의 1.2배를 의미한다. 
+      1em 16px이므로 1.2em은 19.2px이 된다. */
+  font-size: 1.2em; 
+}
+.p1 {
+  background-color: yellow;
+  line-height: 1.5;
+}
+.p2 {
+  background-color: skyblue;
+  line-height: 1.5;
+}
+

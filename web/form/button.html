@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>버튼 예제</title>
+</head>
+<body>
+  <div>
+    <button type="button" onclick="alert('숫자를 입력하세요')">버튼</button>
+    <button onclick="confirm('정말로 삭제하시겠어요?')">삭제</button>
+    <button onclick="window.open('https://www.naver.com', '_blank')">네이버 열기</button>
+  
+    <button onclick="greet()">인사</button>
+
+    <script>
+      /*function greet() {
+        const name = prompt('이름을 입력하세요');
+        if (name) {
+          alert(`안녕하세요, ${name}님!`);
+        } else {
+          alert('이름을 입력하지 않으셨네요.');
+        }
+      }*/
+
+      const greet = () => {
+        const name = prompt('이름을 입력하세요');
+        if (name) {
+          alert(`안녕하세요, ${name}님!`);
+        } else {
+          alert('이름을 입력하지 않으셨네요.');
+        }
+      }
+    </script>
+  </div>
+</body>
+</html>
