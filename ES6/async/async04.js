@@ -10,7 +10,8 @@ async function displayA() {
 }
 
 async function displayB() {
-  return new Promise((resolve) => {
+  // Promise 객체를 반환하여 비동기 작업 처리
+  return new Promise((resolve) => { 
     setTimeout(() => {
       console.log('B');
       resolve();
@@ -22,10 +23,12 @@ async function displayC() {
   console.log('C');
 }
 
+// async/await를 사용하여 순차적으로 실행
 async function runSequence() {
   await displayA();
   await displayB();
   await displayC();
 }
 
-runSequence();
+runSequence(); // runSequence() 함수를 호출하여 실행
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- while문 -->
+  <script>
+    let i = 1; // 초기값
+    while(i <= 5){ // 조건식
+      console.log(i); // 반복 실행할 코드
+      i++; // 증감식
+    }
+
+    // 1부터 10까지의 숫자 중에서 짝수만 출력하기
+    let j = 1;
+    while(j <= 10){
+      j++;
+      if(j % 2 === 0)
+        console.log(j);
+    }
+
+    // 1부터 10까지의 숫자 더하기
+    let k = 1;
+    let sum = 0;
+    while(k <= 10){
+      sum += k; // sum = sum + k;
+      console.log(`k=${k}, sum=${sum}`);
+      k++;
+    }
+    console.log("1부터 10까지의 합:", sum);
+  </script>
+</body>
+</html>

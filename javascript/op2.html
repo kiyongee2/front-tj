@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건 연산자</title>
+</head>
+<body>
+  <script>
+    // 비교 연산자
+    console.log(5 == 3); // false
+    console.log(5 != 3); // true
+    console.log(5 == '5'); // true
+    console.log(5 === '5'); // false
+
+    // 논리 연산자
+    let a = 10;
+    console.log(a > 5 && a < 15); // true
+    console.log(a > 5 || a < 5); // true
+    console.log(!(a > 5)); // false
+
+    // 조건 연산자 (삼항 연산자)
+    let age = 20;
+    let isAdult = (age >= 20) ? "성인" : "미성년자";
+    console.log(`나이: ${age}, 결과: ${isAdult}`);
+
+    let num = 7;
+    let result = (num % 2 === 0) ? "짝수" : "홀수";
+    console.log(`숫자: ${num}, 결과: ${result}`);
+  </script>
+</body>
+</html>

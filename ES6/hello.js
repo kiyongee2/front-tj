@@ -1,5 +1,6 @@
 // ES6 Hello World Example
-const c = require('ansi-colors');
+import c from 'ansi-colors';
+// const c = require('ansi-colors');
 
 // console.log(c.green('Hello, World!'));
 

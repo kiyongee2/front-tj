@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>짝수/홀수 판별</title>
+  <style>
+    #result {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>짝수/홀수 판별</h2>
+  <div id="result"></div>
+
+  <script>
+    //let num = 11; // 판별할 숫자
+    // 사용자로부터 숫자 입력 받기
+    let num = parseInt(prompt("숫자를 입력하세요:")); 
+    console.log(typeof(num)); // number
+    const result = document.getElementById("result");
+
+    // 짝수/홀수 판별
+    if(isNaN(num)){
+      result.textContent = "입력이 취소되었거나 유효하지 않은 숫자입니다.";
+    } else{
+      if (num % 2 === 0) {
+        //result.textContent = `${num}은(는) 짝수입니다.`;
+        result.innerHTML = `<b>${num}</b>은(는) 짝수입니다.`;
+        result.style.color = "blue"; // 짝수는 파란색으로 표시
+      } else {
+        result.innerHTML = `<b>${num}</b>은(는) 홀수입니다.`;
+        result.style.color = "red"; // 홀수는 빨간색으로 표시
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>Person 객체</h2>
+  <div id="demo"></div>
+
+  <script>
+    let person = {
+      name: "이정후",
+      age: 27,
+      play: function() {
+        return `${this.name}가 야구를 합니다.`;
+      }
+    };
+
+    //document.getElementById("demo").innerHTML = person.play();
+    document.getElementById("demo").innerHTML = `
+      이름: ${person.name} <br>
+      나이: ${person.age} <br>
+      활동: ${person.play()}
+    `;
+  </script>
+</body>
+</html>
