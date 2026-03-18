@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var는 호이스팅되어 선언이 끌어올려짐
+    console.log(x); // undefined
+    var x = 5;
+    console.log(x); // 5
+
+    // let과 const는 호이스팅되지 않음
+    console.log(y); 
+    let y = 10; 
+    console.log(y); 
+
+    console.log(z);
+    const z = 15;
+    console.log(z);
+  </script>
+</body>
+</html>
