@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Date 객체</title>
+</head>
+<body>
+  <h2>Date 객체 사용 예제</h2>
+
+  <script>
+    // 현재 날짜와 시간
+    const now = new Date();
+    console.log("현재 날짜와 시간:", now);
+
+    // 날짜 정보 추출
+    console.log("연도:", now.getFullYear());
+    // 월은 0부터 시작하므로 +1
+    console.log("월:", now.getMonth() + 1); 
+    console.log("일:", now.getDate());
+    // 0: 일요일, 1: 월요일, ..., 6: 토요일
+    console.log("요일:", now.getDay()); 
+
+    // 시간 정보 추출
+    console.log("시:", now.getHours());
+    console.log("분:", now.getMinutes());
+    console.log("초:", now.getSeconds());
+    console.log("현재까지의 시간:", now.getTime()/1000, "초");
+  </script>
+</body>
+</html>
