@@ -32,42 +32,42 @@ function App() {
 
   return (
     <>
-      <section>
+      {/* <section>
         <h1>{user.name}</h1>
         <img
           className="profile-photo"
           src={user.imageUrl}
           alt={'Photo of ' + user.name}
         />
-      </section>
+      </section> */}
 
-      <h2>현재 계절은 {season}입니다.</h2>
+      {/* <h2>현재 계절은 {season}입니다.</h2>
       <img 
         src={flower} 
         alt="꽃" 
         width="400" 
-      />
+      /> */}
 
       <div>
         {/* 인라인 스타일 적용 */}
-        <h1
+        {/* <h1
           style={{
             color: 'red',
             fontWeight: 'bold'
           }}   
-        >Hello, World!</h1>
+        >Hello, World!</h1> */}
       </div>  
 
-      <div className="welcome">
+      {/* <div className="welcome">
         <h2>Welcome~ <br /> 홈페이지 방문을 환영합니다!</h2>
-      </div>
+      </div> */}
 
       {/* 버튼 컴포넌트 사용 */}
       {/* <MyButton /> */}
 
       {/* Example 컴포넌트 사용 */}
-      <Example01 />
-      <Example02 />
+      {/* <Example01 /> */}
+      {/* <Example02 /> */}
       <Example03 />
 
       {/* Dog 컴포넌트 사용 */}
@@ -88,8 +88,8 @@ function App() {
       </Box> */}
       {/* <Profile2 /> */}
       {/* <Counter /> */}
-      <AddDrink />
-      <Car />
+      {/* <AddDrink /> */}
+      {/* <Car /> */}
     </>
   )
 }

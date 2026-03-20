@@ -1,5 +1,9 @@
 
+import { useState } from 'react';
+
 const Example03 = () => {
+  const [inputValue, setInputValue] = useState('');
+
   // 이벤트 핸들링
   const handleClick = () => {
     alert('버튼이 클릭되었습니다!');
@@ -11,7 +15,7 @@ const Example03 = () => {
 
   // 폼 요소와 이벤트 핸들링
   const handleInputChange = (event) => {
-    console.log(event.target.value);
+    setInputValue(event.target.value);
   }
 
   return (
@@ -26,7 +30,8 @@ const Example03 = () => {
       <br />
       <br />
       {/* 폼 요소와 이벤트 핸들링 - 입력 이벤트 */}
-      <input type="text" onChange={handleInputChange} />
+      <input type="text" onChange={handleInputChange} placeholder="텍스트를 입력하세요" />
+      <p>입력된 값: <strong>{inputValue}</strong></p>
     </div>
   )
 }
