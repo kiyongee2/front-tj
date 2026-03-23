@@ -35,9 +35,9 @@ const AddProduct = () => {
       <p>상품 추가 컴포넌트입니다.</p>
       <input
         type="text"
+        placeholder="상품 이름을 입력하세요"
         value={productName}
         onChange={handleInputChange}
-        placeholder="상품 이름을 입력하세요"
       />{" "}
       <button onClick={handleAddProduct}>추가</button>
 

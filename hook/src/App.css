@@ -1,0 +1,17 @@
+body{
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+}
+.avatar{
+  border-radius: 3%;
+}
+.card{
+  border: 2px solid #06cccc;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 300px; /* Card는 최대 300px까지만 커짐 */
+  text-align: center;
+}
+
+

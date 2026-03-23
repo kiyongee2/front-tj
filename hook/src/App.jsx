@@ -1,25 +1,26 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import Profile from './card/Profile'
 import './App.css'
 import Counter from './components/Counter'
+import AddProduct from './components/AddProduct'
 import AddDrink from './components/AddDrink'
 import Car from './components/Car'
-import AddProduct from './components/AddProduct'
 import AddProduct2 from './components/AddProduct2'
 
+
 function App() {
-  const [count, setCount] = useState(0)
+  const dogInfo = {
+    breed: '말티즈',
+    age: 2,
+    color: '흰색'
+  }
 
   return (
     <>
-      <div>
-        <h2>리엑트 상태 관리</h2>
-        {/* <Counter /> */}
-        {/* <AddDrink /> */}
+      <div className="app">
         {/* <Car /> */}
         {/* <AddProduct /> */}
+        {/* <AddDrink /> */}
         <AddProduct2 />
       </div>
     </>
