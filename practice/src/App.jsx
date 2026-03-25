@@ -29,14 +29,15 @@ function App() {
   return (
     <>
       <h2>리엑트 연습문제</h2>
-      <Like />
+      <UserList />
+      {/* <Like /> */}
       {/* <UserList /> */}
       {/* {isLoggedIn ? <h3>로그인 성공!</h3> : <h3>로그인 실패!</h3>} */}
-      <h3>{message} {user}님 환영합니다!</h3>
+      {/* <h3>{message} {user}님 환영합니다!</h3>
       <div>
         <a href={site.url} target="_blank">{site.name} 바로가기</a>
       </div>
-      <Event />
+      <Event /> */}
     </>
   )
 }
