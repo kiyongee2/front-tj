@@ -15,6 +15,8 @@
   text-decoration: underline;
 }
 .main {padding: 20px;}
-.info {padding: 20px;}
+.product-list, .product-info {padding: 20px;}
+
+
 .board {padding: 20px;}
 
