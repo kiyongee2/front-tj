@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // 임시 사용자 데이터 (실제 프로젝트에서는 서버에서 받아옴)
 const TEMP_USERS = [
@@ -7,11 +8,13 @@ const TEMP_USERS = [
   { userId: 'tester', password: 'test' },
 ];
 
-const SignIn3 = () => {
+const SignIn = ({ onLogin }) => {
+  const navigate = useNavigate(); // 페이지 이동을 위한 훅
   // 1. 입력 데이터를 객체로 통합
   const [loginData, setLoginData] = useState(
     { userId: '', password: '' }
   );
+  // 로그인 결과 상태 (성공, 실패, 또는 null)
   const [result, setResult] = useState(null);
 
   // 2. 통합 핸들러 (name 속성 활용)
@@ -34,11 +37,19 @@ const SignIn3 = () => {
     );
 
     // 로그인 성공 여부에 따라 결과 상태 업데이트
-    setResult(matched ? 'success' : 'fail');
+    if (matched) {
+      setResult('success');
+      onLogin(userId); // App에 로그인 정보 전달
+      setTimeout(() => {
+        navigate('/'); // 2초 후 홈으로 이동
+      }, 1500);
+    } else {
+      setResult('fail');
+    }
   };
 
   return (
-    <div>
+    <div className='sign-in'>
       <h2>로그인</h2>
       <form onSubmit={handleSubmit}>
         <p>
@@ -73,4 +84,4 @@ const SignIn3 = () => {
   );
 };
 
-export default SignIn3;
+export default SignIn;

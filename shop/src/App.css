@@ -2,6 +2,7 @@
   font-family: Arial, sans-serif;
 }
 .header{
+  width: 100%;
   background-color: #333;
   padding: 20px;
   text-align: center;
@@ -14,10 +15,39 @@
 .header a:hover {
   text-decoration: underline;
 }
-.main {padding: 20px;}
+.header-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  margin-left: 12px;
+}
+.logout-btn {
+  padding: 6px 12px;
+  border: 1px solid #ff9f1c;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #ff9f1c;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: #ff9f1c;
+  color: #333;
+}
+.main {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+.main-link {
+  margin-top: 20px;
+}
+
 .product-list, 
 .product-info, 
-.add-product {padding: 20px;}
+.add-product, 
+.sign-in{padding: 20px;}
 
 .btn-add button {
   padding: 10px 20px;

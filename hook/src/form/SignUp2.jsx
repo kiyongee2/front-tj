@@ -12,9 +12,10 @@ const SignUp2 = () => {
 
   // 2. 통합 핸들러 함수
   const handleChange = (e) => {
-    const { name, value } = e.target; // input의 name 속성과 value를 가져옴
+    // input의 name 속성과 value를 가져옴
+    const { name, value } = e.target; 
     setFormData({
-      ...formData,    // 기존 데이터 복사 (Spread Operator)
+      ...formData,    // 기존 데이터 복사 
       [name]: value,  // 변경된 name 값만 업데이트
     });
   };
