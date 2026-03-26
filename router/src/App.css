@@ -14,7 +14,23 @@
 .header a:hover {
   text-decoration: underline;
 }
+.header-user {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+}
+.btn-logout {
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 .main {padding: 20px;}
+
 .product-list, 
 .product-info, 
 .add-product {padding: 20px;}
