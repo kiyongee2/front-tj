@@ -25,6 +25,7 @@ const Blocks = () => {
   // 클릭한 블록의 색상을 저장하는 상태
   const [clicked, setClicked] = useState(null);
 
+  // 블록 클릭 시 호출되는 함수
   const handleClick = (color) => {
     setClicked(color);
   };
