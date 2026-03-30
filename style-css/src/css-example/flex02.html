@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: flex-start;  /* 아이템을 가로 방향으로 시작 위치에 정렬 */
+      justify-content: space-between;  /* 아이템을 가로 방향으로 양 끝에 정렬 */
+      justify-content: space-around; /* 아이템을 가로 방향으로 고르게 분배 */
+      justify-content: center;  /* 아이템을 가로 방향으로 중앙 정렬 */
+      gap: 16px; /* 아이템 사이의 간격 */
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+</body>
+</html>
