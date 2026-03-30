@@ -4,6 +4,9 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import MainPage from './components/MainPage'
+import FetchExample from './async/FetchExample'
+import Blocks from './components/Blocks'
+import ButtonSample from './components/ButtonSample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -11,7 +14,10 @@ function App() {
   return (
     <>
       <div className="App">
-        <MainPage />
+        {/* <MainPage /> */}
+        {/* <FetchExample /> */}
+        <Blocks />
+        {/* <ButtonSample /> */}
       </div>
     </>
   )
