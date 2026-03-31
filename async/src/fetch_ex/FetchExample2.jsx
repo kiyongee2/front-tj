@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const FetchExample02 = ({ id }) => {
+const FetchExample2 = ({ id }) => {
   // 객체 초기값을 null로 설정 - 데이터가 아직 로드되지 않았음
   const [data, setData] = useState(null);
 
@@ -15,7 +15,7 @@ const FetchExample02 = ({ id }) => {
         }
       ) // 변환된 데이터를 상태에 저장
       .catch((error) => console.error(error)); // 오류 처리
-  }, [id]); // id가 변경될 때마다 데이터를 다시 가져오도록 의존성 배열에 id 추가
+  }, [id]); // id가 변경될 때마다 데이터를 다시 가져옴 
 
   return (
     <div>
@@ -26,7 +26,8 @@ const FetchExample02 = ({ id }) => {
             <strong>제목:</strong> {data.title}
           </p>
           <p>
-            <strong>완료 여부:</strong> {data.completed ? "● 완료" : "○ 미완료"}
+            <strong>완료 여부:</strong> 
+            {data.completed ? "● 완료" : "○ 미완료"}
           </p>
         </div>
       )}
@@ -34,4 +35,5 @@ const FetchExample02 = ({ id }) => {
   );
 };
 
-export default FetchExample02;
+export default FetchExample2;
+
