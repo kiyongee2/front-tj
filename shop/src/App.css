@@ -1,20 +1,13 @@
-.app{
-  font-family: Arial, sans-serif;
-}
+
+/* Header 스타일 */
 .header{
   width: 100%;
   background-color: #333;
   padding: 20px;
   text-align: center;
 }
-.header a {
-  margin: 0 16px;
-  color: orange;
-  text-decoration: none;
-}
-.header a:hover {
-  text-decoration: underline;
-}
+.header a {margin: 0 16px; color: orange; text-decoration: none;}
+.header a:hover {text-decoration: underline;}
 .header-user {
   display: inline-flex;
   align-items: center;
@@ -28,33 +21,27 @@
   border-radius: 6px;
   background-color: transparent;
   color: #ff9f1c;
-  cursor: pointer;
+
 }
-.logout-btn:hover {
-  background-color: #ff9f1c;
-  color: #333;
-}
+.logout-btn:hover {background-color: #ff9f1c;color: #333;}
+
+/* Main 스타일 */
 .main {
   width: 1000px;
   margin: 0 auto;
   padding: 20px;
   text-align: center;
 }
-.main-link {
-  margin-top: 20px;
-}
+.main img {margin-top: 20px;}
 
-.product-list, 
-.product-info, 
-.add-product, 
-.sign-in{
-  padding: 20px;
-  text-align: center;
+/* ProductList 스타일 */
+.product-list {
+  width: 1000px;
+  margin: 0 auto;
+  text-align: left;
 }
-
-/* 상품 리스트 스타일 */
 .table-list {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   border-collapse: collapse;
 }
@@ -62,10 +49,12 @@
   border: 1px solid #ddd;
   padding: 8px;
 }
-.table-list th {
-  background-color: #f2f2f2;
+.table-list th {text-align: center; background-color: #f2f2f2;}
+.btn-add {
+  text-align: right;
+  margin-top: 20px;
+  margin-right: 20%;
 }
-
 .btn-add button {
   padding: 10px 20px;
   border-radius: 4px;
@@ -74,11 +63,9 @@
   border: none;
   cursor: pointer;
 }
-.btn-add button:hover {
-  background-color: #0056b3;
-}
+.btn-add button:hover {background-color: #0056b3;}
 
-/* 상품 정보 스타일 */
+/* 상품 정보 */
 .product-details {
   width: 50%;
   margin: 0 auto;
@@ -86,15 +73,12 @@
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
+.product-details p {margin-bottom: 10px;}
 
 /* 상품 등록 폼 */
-.add-form {
-  width: 40%;
-  margin: 0 auto;
-  text-align: left;
-}
+.add-form {width: 40%; margin: 0 auto; text-align: left;}
 .add-form label {
   display: block;
   margin-bottom: 8px;
@@ -116,25 +100,13 @@
   border: none;
   cursor: pointer;
 }
-.add-form button:hover {
-  background-color: #218838;
-}
-.add-form button[type="submit"] {
-  margin-right: 10px;
-}
-.add-form button[type="button"] {
-  background-color: #6c757d;
-}
-.add-form button[type="button"]:hover {
-  background-color: #5a6268;
-}
+.add-form button:hover {background-color: #218838;}
+.add-form button[type="submit"] {margin-right: 10px;}
+.add-form button[type="button"] {background-color: #6c757d}
+.add-form button[type="button"]:hover {background-color: #5a6268;}
 
 /* 로그인 폼 */
-.signin-form {
-  width: 30%;
-  margin: 0 auto;
-  text-align: left;
-}
+.signin-form {width: 30%; margin: 0 auto; text-align: left;}
 .signin-form input {
   width: 100%;
   padding: 8px;
@@ -152,6 +124,4 @@
   cursor: pointer;
   margin-left: 3%;
 }
-.signin-form button:hover {
-  background-color: #0056b3;
-}
+.signin-form button:hover {background-color: #0056b3;}

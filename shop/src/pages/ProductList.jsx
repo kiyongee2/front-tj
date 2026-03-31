@@ -21,7 +21,7 @@ const ProductList = () => {
             <tr key={product.id}>
               <td>{product.id}</td>
               <td><Link to={`/products/${product.id}`}>{product.name}</Link></td>
-              <td>{product.price}원</td>
+              <td>{product.price}</td>
               <td>{product.description}</td>
             </tr>
           ))}
@@ -36,7 +36,6 @@ const ProductList = () => {
           <p>설명: {product.description}</p>
         </div>
       ))} */}
-      <hr />
       <div className="btn-add">
         <Link to="/add-product">
           <button type="button">상품 등록하기</button>
