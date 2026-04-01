@@ -24,10 +24,13 @@ const Block = styled.div`
 const Blocks = () => {
   // 클릭한 블록의 색상을 저장하는 상태
   const [clicked, setClicked] = useState(null);
+  // 클릭된 글자 색상 변경
+  const [textColor, setTextColor] = useState('black');
 
   // 블록 클릭 시 호출되는 함수
   const handleClick = (color) => {
     setClicked(color);
+    setTextColor(color);
   };
 
   return (
@@ -44,7 +47,7 @@ const Blocks = () => {
         color="#00f" 
         onClick={() => handleClick('blue')}
       />
-      {clicked && <p>클릭한 색상: {clicked}</p>}
+      {clicked && <p style={{ color: textColor }}>클릭한 색상: {clicked}</p>}
     </Wrapper>
   );
 }

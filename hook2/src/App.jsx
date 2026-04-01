@@ -1,20 +1,30 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+
 import './App.css'
-import InputFocus from './components/InputFocus'
-import Counter from './components/Counter'
-import InputText from './components/InputText'
+import Child from './context/ChildTheme';
+import { ThemeContext } from './context/ParentTheme';
+import ParentProps from './props/ParentProps';
+import ParentTheme from './context/ParentTheme';
+import User from './context/User';
+import CounterReducer from './reducer/CounterReducer';
+import Counter from './ref/Counter';
+import InputFocus from './ref/InputFocus';
 
 function App() {
 
   return (
     <>
-      <section id="center">
-        <InputFocus />
+      <section className="app">
+        {/* <CounterReducer /> */}
         {/* <Counter /> */}
-        {/* <InputText /> */}
+        <InputFocus />
+
+        {/* <ThemeContext.Provider value="dark">
+          <Child />
+        </ThemeContext.Provider> */}
+
+        {/* <ParentProps /> */}
+        {/* <ParentTheme /> */}
+        {/* <User /> */}
       </section>
     </>
     )

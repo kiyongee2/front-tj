@@ -16,10 +16,10 @@ function App() {
   return (
     <>
       <div className="App">
-        <ButtonSample />
+        {/* <ButtonSample /> */}
 
         {/* <MainPage /> */}
-        {/* <Blocks /> */}
+        <Blocks />
 
         {/* <FetchExample /> */}
         {/* <FetchExample02 id={4} /> */}
