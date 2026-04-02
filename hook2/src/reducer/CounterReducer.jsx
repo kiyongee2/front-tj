@@ -14,7 +14,7 @@ const reducer = (state, action) => {
     case "RESET":
       return {count: 0};
     default:
-      return state;
+      return state; // 현재 상태를 그대로 반환합니다.
   }
 };
 

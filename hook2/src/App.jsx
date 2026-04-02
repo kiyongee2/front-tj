@@ -8,12 +8,15 @@ import User from './context/User';
 import CounterReducer from './reducer/CounterReducer';
 import Counter from './ref/Counter';
 import InputFocus from './ref/InputFocus';
+import UseCallbackExample from './memoization/UseCallbackExample';
 
 function App() {
 
   return (
     <>
       <section className="app">
+        {/* <UseCallbackExample /> */}
+        {/* <UseMemoExample /> */}
         {/* <CounterReducer /> */}
         {/* <Counter /> */}
         <InputFocus />
@@ -23,8 +26,8 @@ function App() {
         </ThemeContext.Provider> */}
 
         {/* <ParentProps /> */}
-        {/* <ParentTheme /> */}
         {/* <User /> */}
+        {/* <ParentTheme /> */}
       </section>
     </>
     )

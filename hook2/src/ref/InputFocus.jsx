@@ -15,7 +15,8 @@ function InputFocus() {
   const handleSubmit = () => {
     // input 요소의 현재 값을 알림으로 표시
     alert(`환영합니다. ${inputRef.current.value}님`); 
-
+    // console.log(`환영합니다. ${inputRef.current.value}님`);
+    
     // 버튼 클릭 후에도 input 요소에 포커스 유지
     inputRef.current.focus(); 
     // 버튼 클릭 후 input 요소의 값을 초기화
@@ -27,7 +28,7 @@ function InputFocus() {
       {/* ref 속성은 특정 DOM 요소에 접근할 수 있게 해줍니다. */}
       <input 
         type="text" 
-        ref={inputRef} 
+        ref={inputRef} // input 요소에 대한 참조를 설정
         placeholder="이름을 입력하세요"
       />
       <button onClick={handleSubmit}>전송</button>

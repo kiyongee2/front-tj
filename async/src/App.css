@@ -1,0 +1,19 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.table-list {
+  width: 100%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+.table-list th,
+.table-list td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+.table-list thead{
+  background-color: #f2f2f2;
+}

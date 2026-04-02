@@ -13,7 +13,7 @@ const AxiosGetById = ({ id }) => {
         console.log(response.data);
       })
       .catch((error) => console.error(error));
-  }, [id]);
+  }, [id]); // id가 변경될 때마다 데이터를 다시 가져옴
 
   return (
     <div>

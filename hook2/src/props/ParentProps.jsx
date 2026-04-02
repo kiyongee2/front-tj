@@ -8,7 +8,7 @@ const ParentProps = () => {
   };
 
   return (
-    <div style={{ border: '2px solid #000', padding: '10px', margin: '10px' }}>
+    <div className="user">
       <h2>ParentProps 컴포넌트입니다.</h2>
       <ChildProps user={user} />
     </div>

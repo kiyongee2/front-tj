@@ -109,6 +109,10 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+input {
+  padding: 6px 12px;
+  margin: 5px;
+}
 
 button {
   padding: 6px 12px;
