@@ -1,5 +1,6 @@
 
 import ChildProps from "./ChildProps";
+import GrandChildProps from "./GrandChildProps";
 
 const ParentProps = () => {
   const user = {
@@ -10,7 +11,8 @@ const ParentProps = () => {
   return (
     <div className="user">
       <h2>ParentProps 컴포넌트입니다.</h2>
-      <ChildProps user={user} />
+      {/* <ChildProps user={user} /> */}
+      <GrandChildProps user={user} />
     </div>
   );
 }

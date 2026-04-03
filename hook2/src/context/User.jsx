@@ -1,5 +1,6 @@
 import { createContext, useContext } from 'react';
 import UserChild from './UserChild';
+import GrandChildProps from '../props/GrandChildProps';
 
 // UserContext를 생성합니다. 기본값은 빈 객체입니다.
 export const UserContext = createContext({});
@@ -14,12 +15,11 @@ const User = () => {
   return (
     <div className='user'>
       <h2>User 컴포넌트입니다.</h2>
-      <p>사용자 정보를 Context로 전달합니다.</p>
-      
       {/* UserContext.Provider로 감싸서 user 값을 
                 하위 컴포넌트에 제공합니다 */}
       <UserContext.Provider value={user}>
-        <UserChild />
+        {/* <UserChild /> */}
+        <GrandChildProps user={user} />
       </UserContext.Provider>
     </div>
   );

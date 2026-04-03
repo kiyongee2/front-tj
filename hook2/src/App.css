@@ -1,11 +1,45 @@
 .app {
   font-family: Arial, sans-serif;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 30px;
 }
+.header {
+  margin-bottom: 30px;
+}
+.header a {
+  margin: 0 10px;
+  color: #333;
+}
+
 .user, .user-child, .user-grandchild {
   margin-top: 20px;
   padding: 10px;
   border: 1px solid #ccc;
   display: inline-block;
 }
+.balance {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px;
+}
+.balance span {
+  color: #0066cc;
+}
+.transaction-list {
+  margin-top: 30px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.transaction-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.transaction-list th, .transaction-list td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+.transaction-list th {
+  background-color: #f0f0f0;
+}       
+
