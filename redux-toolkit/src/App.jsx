@@ -2,7 +2,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import Header from './layouts/Header'
-import ReduxApp from './basic-app/ReduxCounter'
+import Counter from './apps/Counter'
+import Bank from './apps/Bank'
+import Todos from './apps/Todos'
 
 function App() {
 
@@ -12,8 +14,10 @@ function App() {
         <BrowserRouter>
           <Header />
           <Routes>
-            <Route path="/" element={<ReduxCounter />} />
-            <Route path="/redux-app" element={<ReduxCounter />} />
+            <Route path="/" element={<Counter />} />
+            <Route path="/counter" element={<Counter />} />
+            <Route path="/bank" element={<Bank />} />
+            <Route path="/todos" element={<Todos />} />
           </Routes>
         </BrowserRouter>
       </section>

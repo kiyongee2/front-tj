@@ -95,7 +95,18 @@ h2 {
 p {
   margin: 0;
 }
-
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+input{
+  padding: 6px 12px;
+}
+button{
+  margin: 8px 4px;
+  padding: 6px 12px;
+}
 code,
 .counter {
   font-family: var(--mono);

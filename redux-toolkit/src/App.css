@@ -1,7 +1,11 @@
 header{
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
+}
+header a{
+  color: #333;
+  margin: 0 20px;
 }
 #center{
   display: flex;
@@ -10,7 +14,7 @@ header{
   /* align-items: center; */
   margin-top: 30px;
 }
-button{
-  margin: 8px 4px;
-  padding: 6px 12px;
+.completed{
+  text-decoration: line-through;
 }
+
