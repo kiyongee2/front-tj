@@ -38,7 +38,7 @@ const ReduxBank = () => {
       <ul>
         {transactions.map((transaction, index) => (
           <li key={index}>
-            [{transaction.timestamp}] 
+            [{transaction.timestamp}]{' '} 
               {transaction.type === 'deposit' ? '입금' : '출금'}: {transaction.amount}원
           </li>
         ))}

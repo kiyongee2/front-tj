@@ -13,9 +13,11 @@ const bankSlice = createSlice({
     deposit: (state, action) => {
       state.balance += action.payload  // 입금액을 잔액에 더함
       // 거래 내역에 입금 기록을 추가
+      // push()를 사용하여 transactions 배열에 새로운 거래 객체를 추가
       state.transactions.push({ 
         type: 'deposit', 
         amount: action.payload,
+        // timestamp는 거래가 발생한 시간을 문자열로 저장
         timestamp: new Date().toLocaleString('ko-KR')
       })
     },
@@ -28,7 +30,6 @@ const bankSlice = createSlice({
           amount: action.payload,
           timestamp: new Date().toLocaleString('ko-KR')
         })
-
       } else {
         alert("잔액이 부족합니다.")
       }
