@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>배열(Array)</title>
 </head>
 <body>
   <h2>배열(Array)</h2>
@@ -15,7 +15,7 @@
     let fruits = ["사과", "배", "포도", "바나나"];
 
     // 배열 요소 접근
-    result.innerHTML += "첫 번째 과일: " + fruits[0] + "<br>"; // 사과
+    result.innerHTML = "첫 번째 과일: " + fruits[0] + "<br>"; // 사과
     result.innerHTML += "세 번째 과일: " + fruits[2] + "<br>"; // 포도
     result.innerHTML += "<br>";
 
@@ -25,7 +25,6 @@
 
     // 배열 요소 출력
     for(let i = 0; i < fruits.length; i++) {
-      //result.innerHTML += "과일 " + (i + 1) + ": " + fruits[i] + "<br>";
       result.innerHTML += `과일 ${i + 1}: ${fruits[i]}<br>`;
     }
     result.innerHTML += "<br>";
@@ -33,23 +32,16 @@
     // 배열 요소 추가
     fruits.push("오렌지");
 
-    // 배열 요소 출력 (추가 후)
-    for(let i = 0; i < fruits.length; i++) {
-      result.innerHTML += `과일 ${i + 1}: ${fruits[i]}<br>`;
-    }
-    result.innerHTML += "<br>";
-
     // 배열 요소 제거
     fruits.pop(); // 마지막 요소 제거
 
     // 배열 요소 변경
     fruits[1] = "딸기"; // 두 번째 요소 변경
 
-    // 배열 요소 출력 (변경 후)
-    for(let i = 0; i < fruits.length; i++) {
-      result.innerHTML += `과일 ${i + 1}: ${fruits[i]}<br>`;
-    }
-
+    // 배열 요소 출력 (변경 후) - forEach 메서드 사용
+    fruits.forEach(function(fruit, index) {
+      result.innerHTML += `과일 ${index + 1}: ${fruit}<br>`;
+    });
   </script>
 </body>
 </html>

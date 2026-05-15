@@ -26,17 +26,12 @@ console.log(typeof(isRaining)); // boolean
 console.log("맑은가?", isSunny);
 console.log(typeof(isSunny)); // boolean
 
-//4. undefined
-let score; // 변수 선언만 하고 초기화하지 않음
-console.log("점수:", score);
-console.log(typeof(score)); // undefined
-
-//5. 배열형
+//4. 배열형
 let fruits = ["사과", "바나나", "오렌지"];
 console.log("과일 목록:", fruits);
 console.log(typeof(fruits)); // object (배열도 객체의 한 종류)
 
-//6. 객체형
+//5. 객체형
 let person = {
   name: "우영우",
   age: 30,
@@ -47,3 +42,21 @@ console.log(typeof(person)); // object
 console.log("이름:", person.name);
 console.log("나이:", person.age);
 console.log("도시:", person.city);
+
+//6. undefined, null
+let score; // 변수 선언만 하고 초기화하지 않음
+console.log("점수:", score);
+console.log(typeof(score)); // undefined
+
+score = 85; // score 변수에 값 할당
+console.log("점수:", score);
+
+let major = null; // null은 의도적으로 값이 없음을 나타내는 특별한 값
+console.log("null 값:", major);
+console.log(typeof(major)); 
+
+//7. 함수형
+function greet(name) {
+  return "안녕하세요, " + name + "!";
+}
+console.log(greet("홍길동")); // 안녕하세요, 홍길동!

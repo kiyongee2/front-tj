@@ -32,19 +32,21 @@ const person = persons[2]; // 세 번째 객체 조회
 const demo = document.getElementById('demo');
 
 // HTML 요소에 정보 출력
-/*demo.innerHTML = `
+demo.innerHTML = `
   <h3>${person.name}</h3> 
-  나이: ${person.age},<br>
-  스포츠: ${person.sport}
-`; */
+  <p>나이: ${person.age}</p>
+  <p>스포츠: ${person.sport}</p>
+`; 
+
+demo.innerHTML += "================================";
 
 // 객체 배열 순회
 /*for (let i = 0; i < persons.length; i++) {
     const person = persons[i];
     demo.innerHTML += `
     <h3>${person.name}</h3> 
-    나이: ${person.age},<br>
-    스포츠: ${person.sport}
+    <p>나이: ${person.age}</p>
+    <p>스포츠: ${person.sport}</p>
   `; 
 }*/
 
@@ -52,7 +54,8 @@ const demo = document.getElementById('demo');
 persons.forEach(person => {
     demo.innerHTML += `
     <h3>${person.name}</h3>
-    나이: ${person.age},<br>
-    스포츠: ${person.sport}
+    <p>나이: ${person.age}</p>
+    <p>스포츠: ${person.sport}</p>
   `; 
 });
+

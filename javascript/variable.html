@@ -13,11 +13,19 @@
     // 변수 선언과 자료형 예시
     var name = "Alice"; // 문자열
     let age = 30; // 숫자
-    const isStudent = true; // 불리언
+    const isStudent = true; // 불리언, 상수
 
     console.log("Name:", name);
     console.log("Age:", age);
     console.log("Is Student:", isStudent);
+
+    // 변수 재할당 예시
+    name = "Bob";
+    age = 25;
+    console.log("Updated Name:", name);
+    console.log("Updated Age:", age);
+
+    isStudent = false; // 오류 발생: const로 선언된 변수는 재할당 불가
   </script>
 </body>
 </html>

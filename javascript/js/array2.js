@@ -1,7 +1,4 @@
 
-// demo 요소 선택
-let demo = document.getElementById("demo");
-
 // 배열 생성(길이가 4인 배열)
 let numbers = new Array(4);
 // 배열에 값 할당(인덱스)
@@ -16,7 +13,15 @@ for (let i = 0; i < numbers.length; i++) {
 }
 
 // 배열 출력
-for (let i = 0; i < numbers.length; i++) {
-  demo.innerHTML += numbers[i] + "<br>";
-}
+console.log("배열 요소:", numbers);
+
+// demo 요소 선택
+let demo = document.getElementById("demo");
+
+// forEach() 메서드를 이용하여 출력
+numbers.forEach((number, index) => {
+  demo.innerHTML += number + "<br>";
+});
+
+
 

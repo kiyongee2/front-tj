@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>flex 속성</title>
+  <title>flex</title>
   <style>
-    #container {
+    .container {
       display: flex;
-      border: 1px solid #000;
-      justify-content: flex-end;
+      flex-direction: row; /* 아이템을 가로 방향으로 배치 */
+      flex-direction: column; /* 아이템을 세로 방향으로 배치 */
+      gap: 16px; /* 아이템 사이의 간격 */
     }
     .box {
       width: 100px;
       height: 100px;
-      background-color: #007bff;
-      margin: 10px;
+      background-color: lightcoral;
     }
   </style>
 </head>
 <body>
-  <div id="container">
-    <div class="box"></div>
+  <div class="container">
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
