@@ -5,7 +5,7 @@ export default function Event() {
   const [inputValue, setInputValue] = useState("");
 
   const handleClick = () => {
-    alert("버튼이 클릭되었습니다!")
+    console.log("버튼 클릭됨");
   }
 
   const square = (x) => {
