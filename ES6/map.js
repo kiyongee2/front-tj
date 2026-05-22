@@ -1,15 +1,16 @@
-
 /* 
 map() 함수
 배열의 각 요소에 대해 주어진 함수를 호출한 결과를 모아 
 새로운 배열을 반환하는 함수
 */
 
+//배열의 각 요소를 2배로 만드는 예시
 const arr = [1, 2, 3];
 
 const newArr = arr.map(x => x * 2);
 console.log(newArr); // [2, 4, 6]
 
+//객체 배열에서 특정 속성만 추출하기
 const users = [
   { name: 'Jerry', age: 25 },
   { name: 'Linda', age: 30 },

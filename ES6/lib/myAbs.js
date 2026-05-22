@@ -7,13 +7,11 @@ function myAbs(x) {
   }
 }
 
-export { myAbs }; // export { myAbs, square }; 배열로 내보내기
-// export default myAbs; 
+function square(x) {
+  return x * x;
+}
 
-// function square(x) {
-//   return x * x;
-// }
+//export { myAbs }; //myAbs 함수만 내보내기
 
-
-
+export { myAbs, square }; //myAbs와 square 함수를 모두 내보내기
 
