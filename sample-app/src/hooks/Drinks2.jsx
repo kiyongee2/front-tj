@@ -29,12 +29,11 @@ const Drinks2 = () => {
       />
       <button onClick={addDrink}>음료 추가</button>
       
-      {/* DrinkList 컴포넌트 연결 */}
-      <DrinkList 
-        drinks={drinks}
-      />
+      {/* DrinkList 컴포넌트 연결 - drinks 속성으로 전달 */}
+      <DrinkList drinks={drinks}/>
     </div>
   )
 }
 
 export default Drinks2;
+

@@ -1,5 +1,11 @@
-.main{
+.app{
   margin: 20px;
+}
+.header a{
+  margin: 10px;
+}
+.contents{
+  margin-top: 40px;
 }
 .sign-up h2{
   margin-bottom: 20px;

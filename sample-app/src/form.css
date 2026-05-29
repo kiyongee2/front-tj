@@ -1,0 +1,81 @@
+.form-container {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 32px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form-container h2 {
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.form-container form p {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.form-container label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #555;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container select,
+.form-container textarea {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container select:focus,
+.form-container textarea:focus {
+  border-color: #4a90e2;
+}
+
+.form-container textarea {
+  resize: vertical;
+}
+
+.form-container .radio-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
+.form-container button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  background-color: #4a90e2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #357abd;
+}
+
+.form-container .result-msg {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}

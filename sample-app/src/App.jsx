@@ -10,6 +10,11 @@ import SignIn from './forms/SignIn';
 import Dog from './components/Dog'
 import Box from './components/Box'
 import Counter from './hooks/Counter';
+import Example02 from './components/Example02';
+import Example03 from './components/Example03';
+import Car from './components/Car';
+import UseEffectEx from './hooks/UseEffectEx';
+import SignUp from './forms/SignUp';
 
 function App() {
   const dogInfo = {
@@ -31,12 +36,17 @@ function App() {
         color={dogInfo.color}
       /> */}
       {/* <Counter /> */}
+      {/* <Car /> */}
       {/* <Main /> */}
       {/* <Example01 /> */}
+      {/* <Example02 /> */}
+      {/* <Example03 /> */}
       {/* <Drinks /> */}
       {/* <Drinks2 /> */}
+      {/* <UseEffectEx /> */}
       {/* <Clock /> */}
       <SignIn />
+      {/* <SignUp /> */}
     </div>
   )
 }
