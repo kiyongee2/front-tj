@@ -15,6 +15,7 @@ import Example03 from './components/Example03';
 import Car from './components/Car';
 import UseEffectEx from './hooks/UseEffectEx';
 import SignUp from './forms/SignUp';
+import Profile from './card-ui/Profile';
 
 function App() {
   const dogInfo = {
@@ -25,10 +26,14 @@ function App() {
   
   return (
     <div className='main'>
-      {/* <h2>Props Children</h2>
-      <Box>
+      {/* <h2>Props Children</h2> */}
+      {/* <Box>
         <h3>박스안의 내용</h3>
         <p>이것은 Box 컴포넌트 안에 있는 내용입니다.</p>
+      </Box>
+      <Box>
+        <h3>또 다른 박스</h3>
+        <p>이것은 또 다른 Box 컴포넌트 안에 있는 내용입니다.</p>
       </Box> */}
       {/* <Dog 
         breed={dogInfo.breed}
@@ -45,8 +50,9 @@ function App() {
       {/* <Drinks2 /> */}
       {/* <UseEffectEx /> */}
       {/* <Clock /> */}
-      <SignIn />
+      {/* <SignIn /> */}
       {/* <SignUp /> */}
+      <Profile />
     </div>
   )
 }

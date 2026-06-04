@@ -1,6 +1,8 @@
 .main{
   margin: 20px;
 }
+
+/* 폼 제어 스타일 */
 .sign-up h2{
   margin-bottom: 20px;
 }
@@ -35,3 +37,23 @@
   margin-top: 20px;
   font-weight: bold;
 }
+
+/* Card UI 스타일 */
+/* 
+img 태그는 기본적으로 inline 요소라서 
+텍스트 베이스라인에 맞춰 렌더링되는데, 
+이 때문에 이미지 아래에 영문 소문자 
+내려쓰기(descender) 공간만큼 여백이 생깁니다. */
+.avatar{
+  /* inline 요소를 block 요소로 변경하여 여백 제거 */
+  display: block; 
+  border-radius: 5px;
+}
+.card{
+  border: 3px solid #06cccc;
+  border-radius: 10px;
+  max-width: 400px; /* Card는 최대 400px까지만 커짐 */
+  padding: 10px;
+  margin: 10px auto;
+}
+
