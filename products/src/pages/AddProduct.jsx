@@ -1,22 +1,54 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
+  // 폼 데이터 상태 관리
   const [formData, setFormData] = useState({
     name: '',
     price: '',
     description: ''
   })
 
+  const navigate = useNavigate();
+
+  // 입력 필드 변경 핸들러
   const handleChange = (e) => {
     const { name, value } = e.target 
 
+    // 변경된 name 값만 업데이트
     setFormData({...formData, [name]: value})
   }
 
+  // 폼 전송 핸들러
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // 입력값 검증(유효성 검사)
+    if(!formData.name.trim() || !formData.price ||
+        !formData.description.trim()){
+      alert("모든 필드를 입력해주세요");
+      return; //즉시 종료
+    }
+
+    // 가격 필드 검증
+    if(isNaN(formData.price) || formData.price <= 0){
+      alert("가격은 0보다 큰 숫자를 입력해주세요");
+      return;
+    }
+
     console.log('상품 추가:', formData);
+    alert("상품이 등록되었습니다.")
+    navigate("/products"); //상품 목록 페이지로 이동
+  }
+
+  // 입력 취소 버튼
+  const handleCancel = () => {
+    //입력 필드 초기화
+    setFormData({
+      name: '',
+      price: '',
+      description: ''
+    })
   }
 
   return(
@@ -59,6 +91,7 @@ const AddProduct = () => {
         </div>
         <div>
           <button type="submit">등록</button>
+          <button type="button" onClick={handleCancel}>취소</button>
         </div>
       </form>
     </div>

@@ -92,7 +92,7 @@ h2 {
   }
 }
 p {
-  margin: 0;
+  margin: 10px;
 }
 
 code,
@@ -111,4 +111,9 @@ code {
 }
 ul{
   list-style: none;
+  padding: 0;
+}
+button{
+  padding: 2px 4px;
+  margin: 2px;
 }

@@ -9,20 +9,38 @@ import Main from './layouts/Main'
 import ProductList from './pages/ProductList'
 import ProductInfo from './pages/ProductInfo'
 import AddProduct from './pages/AddProduct'
+import SignIn from './pages/SignIn'
 
 function App() {
-  const [count, setCount] = useState(0)
+  //로그인 상태 관리
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  //로그인한 사용자 id 관리
+
+  //로그인 핸들러
+  const handleLogin = (username) => {
+    setIsLoggedIn(true);
+  }
+
+  //로그아웃 핸들러
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+  }
 
   return (
     <>
       <section className="app">
         <BrowserRouter>
-          <Header />
+          <Header 
+            isLoggedIn={isLoggedIn}
+            onLogout={handleLogout}
+          />
           <Routes>
             <Route path='/' element={<Main />} />
             <Route path='/products' element={<ProductList />} />
             <Route path='/products/:id' element={<ProductInfo />} />
-            <Route path='/new-product' element={<AddProduct />} />
+            <Route path='/add-product' element={<AddProduct />} />
+            <Route path='/signin' element={<SignIn onLogin={handleLogin} />} />
           </Routes>
         </BrowserRouter>
       </section>

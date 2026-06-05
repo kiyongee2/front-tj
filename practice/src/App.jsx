@@ -10,6 +10,8 @@ import UserList from './components/UserList'
 import Like from './components/Like'
 import SignUp from './forms/SignUp'
 import Profile from './components/Profile'
+import UseEffectEx from './components/UseEffectEx'
+import InputValue from './components/InputValue'
 
 function App() {
   // const user = "김기용"
@@ -32,7 +34,10 @@ function App() {
       {/* <SignUp /> */}
       {/* <Like /> */}
       {/* <Event /> */}
-      <Profile />
+      {/* <Profile /> */}
+      {/* <UseEffectEx /> */}
+      {/* <UserList /> */}
+      <InputValue />
     </>
   )
 }

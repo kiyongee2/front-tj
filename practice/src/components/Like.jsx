@@ -2,6 +2,7 @@
 import { useState } from "react";
 
 const Like = () => {
+  // 좋아요 상태 관리
   const [likeCount, setLikeCount] = useState(0);
 
   const handleLike = () => {
