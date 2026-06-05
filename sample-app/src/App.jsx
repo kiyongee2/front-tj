@@ -49,10 +49,10 @@ function App() {
       {/* <Drinks /> */}
       {/* <Drinks2 /> */}
       {/* <UseEffectEx /> */}
-      {/* <Clock /> */}
+      <Clock />
       {/* <SignIn /> */}
       {/* <SignUp /> */}
-      <Profile />
+      {/* <Profile /> */}
     </div>
   )
 }

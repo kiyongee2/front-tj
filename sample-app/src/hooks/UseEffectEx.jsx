@@ -20,16 +20,20 @@ const UseEffectEx = () => {
   return(
     <div>
       <h2>사용자 정보</h2>
-      <input 
-        type="text" 
-        value={name}
-        onChange={onChangeName}
-      />
-      <input 
-        type="number" 
-        value={age}
-        onChange={onChangeAge}
-      />
+      <div>
+        <input 
+          type="text" 
+          value={name}
+          onChange={onChangeName}
+        />
+      </div>
+      <div>
+        <input 
+          type="number" 
+          value={age}
+          onChange={onChangeAge}
+        />
+      </div>
       <p>이름: {name}</p>
       <p>나이: {age}</p>
     </div>

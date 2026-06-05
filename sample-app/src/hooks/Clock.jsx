@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 export default function Clock(){
+  // time 상태 관리
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
+  //처음 랜더링될때 타이머 설정
   useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date().toLocaleTimeString());
@@ -18,3 +20,4 @@ export default function Clock(){
     </div>
   )
 }
+
