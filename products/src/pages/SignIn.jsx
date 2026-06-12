@@ -33,7 +33,7 @@ const SignIn = ({onLogin}) => {
     //로그인 성공여부에 따라 결과 상태 업데이트
     if(matched){
       setResult('success');
-      onLogin(username);
+      onLogin(username);  //로그인 성공 시 부모 컴포넌트에 로그인 상태 전달
       navigate('/')
     }else{
       setResult('fail');

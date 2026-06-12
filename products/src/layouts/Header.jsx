@@ -1,7 +1,7 @@
 
 import { Link, useNavigate } from "react-router-dom"
 
-const Header = ({isLoggedIn, onLogout}) => {
+const Header = ({isLoggedIn, username, onLogout}) => {
   const navigate = useNavigate();
 
   return (
@@ -12,7 +12,9 @@ const Header = ({isLoggedIn, onLogout}) => {
         <Link to="/add-product">상품 등록</Link>
         {isLoggedIn ? (
           <div className="header-user">
+            <span>{username}님</span>
             <button
+              className="logout-btn"
               type="button"
               onClick={() => {onLogout(); navigate('/')}}
             >

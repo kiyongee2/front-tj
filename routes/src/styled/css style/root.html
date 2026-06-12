@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 스타일</title>
+  <style>
+    /* css 변수 정의 */
+    :root{
+      /* 글자색 */
+      --red-color: rgb(212, 60, 60);
+
+      /* 배경색 */
+      --green-color: rgb(45, 238, 45);
+
+      /* 여백 1rem = 16px */
+      --my-2: 0.5rem;
+      --my-3: 1rem;
+    }
+    h2{
+     /* color: red; */
+     color: var(--red-color);
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      /*background-color: #0f0;*/
+      background-color: var(--green-color);
+      /*margin: 10px;*/
+      margin: var(--my-3);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2>스타일 변수</h2>
+  <div></div>
+  <div></div>
+</body>
+</html>

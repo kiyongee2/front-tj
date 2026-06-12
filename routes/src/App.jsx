@@ -4,13 +4,16 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Home from './member/Home'
 import SignIn from './member/SignIn'
 import SignUp from './member/SignUp'
+import ButtonSample from './styled/ButtonSample'
+import MainPage from './styled/MainPage'
+import Blocks from './styled/Blocks'
 
 function App() {
 
   return (
     <>
       <section className='app'>
-        <BrowserRouter>
+        {/* <BrowserRouter>
           <div className='header'>
             <Link to="/">Home</Link>
             <Link to="/sign-in">로그인</Link>
@@ -24,7 +27,10 @@ function App() {
               <Route path='/sign-up' element={<SignUp />} />
             </Routes>
           </div>
-        </BrowserRouter>
+        </BrowserRouter> */}
+        {/* <ButtonSample /> */}
+        {/* <MainPage /> */}
+        <Blocks />
       </section>
     </>
   )

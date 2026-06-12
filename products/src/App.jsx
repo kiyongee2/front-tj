@@ -16,10 +16,12 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   //로그인한 사용자 id 관리
+  const [username, setUsername] = useState('');
 
   //로그인 핸들러
   const handleLogin = (username) => {
     setIsLoggedIn(true);
+    setUsername(username);
   }
 
   //로그아웃 핸들러
@@ -33,6 +35,7 @@ function App() {
         <BrowserRouter>
           <Header 
             isLoggedIn={isLoggedIn}
+            username={username}
             onLogout={handleLogout}
           />
           <Routes>
