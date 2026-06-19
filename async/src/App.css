@@ -1,8 +1,14 @@
-.container {
-  max-width: 600px;
-  margin: 0 auto;
+.fetch-todos,
+.axios-todos,
+.axios-new-todo {
   padding: 20px;
 }
+.fetch-todo-by-id,
+.axios-todo-by-id {
+  padding: 20px;
+  line-height: 2.5; 
+}
+
 .table-list {
   width: 100%;
   margin: 20px auto;

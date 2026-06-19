@@ -1,28 +1,30 @@
 import { useState } from 'react'
 import './App.css'
-import FetchExample from './fetch_ex/FetchExample'
-import FetchExample2 from './fetch_ex/FetchExample2'
-import AxiosGet from './axios_ex/AxiosGet'
-import AxiosGetById from './axios_ex/AxiosGetById'
-import AxiosPost from './axios_ex/AxiosPost'
-import AxiosPut from './axios_ex/AxiosPut'
-import AxiosDelete from './axios_ex/AxiosDelete'
-import FetchGet from './fetch_ex/FetchGet'
-import FetchGetById from './fetch_ex/FetchGetById'
+
+
+import FetchTodos from './fetch_ex/FetchTodos'
+import FetchTodoById from './fetch_ex/FetchTodoById'
+import AxiosTodos from './axios_ex/AxiosTodos'
+import AxiosTodoById from './axios_ex/AxiosTodoById'
+import AxiosPost from './axios_ex/AxiosNewTodo'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
 
   return (
     <>
-      {/* <FetchGet /> */}
-      <FetchGetById id={2} />
-      {/* <FetchExample /> */}
-      {/* <FetchExample2 id={1} /> */}
-      {/* <AxiosGet /> */}
-      {/* <AxiosGetById id={200} /> */}
-      {/* <AxiosPost /> */}
-      {/* <AxiosPut /> */}
-      {/* <AxiosDelete /> */}
+      <BrowserRouter>
+        <Routes>
+          {/* Fetch Todo */}
+          <Route path="/" element={<FetchTodos />} />
+          <Route path="/:id" element={<FetchTodoById />} />
+
+          {/* Axios Todo */}
+          <Route path="/axios" element={<AxiosTodos />} />
+          <Route path="/axios/:id" element={<AxiosTodoById />} />
+          <Route path="/axios-post" element={<AxiosPost />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

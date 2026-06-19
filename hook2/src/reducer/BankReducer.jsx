@@ -1,5 +1,9 @@
 import React, { useReducer, useState } from 'react';
 
+const initialState = {
+   balance: 0 // 초기 잔액을 0으로 설정합니다.
+}
+
 const bankReducer = (state, action) => {
   console.log("reducer가 작동합니다.", state, action);
   
@@ -21,8 +25,7 @@ const bankReducer = (state, action) => {
 
 const BankReducer = () => {
    const [amount, setAmount] = useState(0);
-   // 초기 잔액을 0으로 설정합니다.
-   const [state, dispatch] = useReducer(bankReducer, { balance: 0 }); 
+   const [state, dispatch] = useReducer(bankReducer, initialState); 
 
   return (
     <div>
@@ -33,8 +36,10 @@ const BankReducer = () => {
         onChange={(e) => setAmount(parseInt(e.target.value))}
         step="1000"
       />
-      <button onClick={() => {dispatch({ type: 'DEPOSIT', payload: amount })}}>예금</button>
-      <button onClick={() => {dispatch({ type: 'WITHDRAW', payload: amount })}}>출금</button>
+      <button onClick={() => 
+        dispatch({ type: 'DEPOSIT', payload: amount })}>예금</button>
+      <button onClick={() => 
+        dispatch({ type: 'WITHDRAW', payload: amount })}>출금</button>
     </div>
   )
 }

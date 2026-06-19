@@ -6,13 +6,11 @@ function Counter() {
   // useRef 훅을 사용하여 countRef라는 
   // 참조 객체를 생성하고 초기값을 0으로 설정
   const countRef = useRef(0); 
-  // 일반 변수 - 컴포넌트가 리렌더링될 때마다 초기화
-  let countVar = 0; 
+  let countVar = 0;  // 일반 변수 - 컴포넌트가 리렌더링될 때마다 초기화
   
   console.log("렌더링...");
   // {current: 0} 객체 - 초기값은 0입니다.
-  // countRef.current를 사용
-  console.log(countRef); 
+  console.log(countRef);  // countRef.current를 사용
   
   // 상태 증가
   const increaseCount = () => {

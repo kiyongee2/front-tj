@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 // JSONPlaceholder에서 사용자 데이터를 가져오는 예시
-const AxiosPost = () => {
+const AxiosNewTodo = () => {
     // 할 일 제목을 저장하는 상태
     const [title, setTitle] = useState("");
 
@@ -29,7 +29,7 @@ const AxiosPost = () => {
     }
 
     return (
-        <div>
+        <div className="axios-new-todo">
           <h2>할 일(To-do) 추가</h2>
           <form onSubmit={handleSubmit}>
             <input
@@ -44,5 +44,5 @@ const AxiosPost = () => {
     );
 }
 
-export default AxiosPost;
+export default AxiosNewTodo;
 
