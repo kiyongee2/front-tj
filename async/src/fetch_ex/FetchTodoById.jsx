@@ -27,7 +27,7 @@ const FetchTodoById = () => {
           </p>
           <p>
             <strong>완료 여부:</strong> 
-            {data.completed ? "● 완료" : "○ 미완료"}
+            {data.completed ? " ● 완료" : " ○ 미완료"}
           </p>
         </div>
       )}

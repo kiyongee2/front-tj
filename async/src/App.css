@@ -1,25 +1,14 @@
-.fetch-todos,
-.axios-todos,
-.axios-new-todo {
-  padding: 20px;
+.app{
+  margin-top: 20px;
 }
-.fetch-todo-by-id,
-.axios-todo-by-id {
-  padding: 20px;
-  line-height: 2.5; 
+.fetch-todos ul li,
+.axios-todos ul li{margin: 10px;}
+
+.fetch-todo-by-id p,
+.axios-todo-by-id p{line-height: 2;}
+
+.axios-new-todo button{
+  padding: 6px 12px;
+  margin: 5px;
 }
 
-.table-list {
-  width: 100%;
-  margin: 20px auto;
-  border-collapse: collapse;
-}
-.table-list th,
-.table-list td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: center;
-}
-.table-list thead{
-  background-color: #f2f2f2;
-}

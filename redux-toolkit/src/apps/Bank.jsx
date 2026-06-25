@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { deposit, withdraw } from "../store/bankSlice"
 import { useState } from "react"
 
-const ReduxBank = () => {
+const Bank = () => {
   // 입금/출금할 금액을 관리하는 state
   const [amount, setAmount] = useState(0) 
   // bankSlice의 balance 값을 가져옴
@@ -19,6 +19,7 @@ const ReduxBank = () => {
 
   // 출금 버튼 클릭 시 withdraw 액션을 dispatch
   const handleWithdraw = () => {
+    //잔액 부족시 알림
     dispatch(withdraw(Number(amount)))
   }
 
@@ -47,5 +48,5 @@ const ReduxBank = () => {
   )
 }
 
-export default ReduxBank
+export default Bank
 
