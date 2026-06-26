@@ -14,6 +14,7 @@ import ParentTheme from './theme/ParentTheme'
 // import InputFocus from './ref/InputFocus'
 // import Counter from './ref/Counter'
 import Counter from './apps/Counter'
+import Bank from './apps/Bank'
 
 function App() {
 
@@ -39,6 +40,7 @@ function App() {
             {/* 리덕스 툴킷 */}
             <Route path='/' element={<Counter />} />
             <Route path='/counter' element={<Counter />} />
+            <Route path='/bank' element={<Bank />} />
           </Routes>
         </BrowserRouter>
       </main>

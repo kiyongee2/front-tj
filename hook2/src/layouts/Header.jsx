@@ -17,6 +17,7 @@ const Header = () => {
 
         {/* 리덕스 툴킷 */}
         <Link to='/counter'>Counter</Link>
+        <Link to='/bank'>Bank</Link>
       </nav>
     </header>
   );
