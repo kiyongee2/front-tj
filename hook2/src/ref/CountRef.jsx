@@ -1,7 +1,7 @@
 
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 
-function Counter() {
+function CountRef() {
   const [count, setCount] = useState(0);
   // useRef 훅을 사용하여 countRef라는 
   // 참조 객체를 생성하고 초기값을 0으로 설정
@@ -42,4 +42,4 @@ function Counter() {
   );
 }
 
-export default Counter;
+export default CountRef;

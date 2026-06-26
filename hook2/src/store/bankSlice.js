@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  balance: 0,
+  balance: 0, //잔고
+  transactions: []  //거래 내역
 }
 
 const bankSlice = createSlice({
@@ -10,6 +11,11 @@ const bankSlice = createSlice({
   reducers: {
     deposit: (state, action) => {
       state.balance += action.payload;
+      state.transactions.push({
+        type: 'deposit',
+        amount: action.payload,
+        timestamp: new Date().toLocaleString("ko-KR")
+      })
     },
     withdraw: (state, action) => {
       if(state.balance < action.payload){
@@ -17,6 +23,11 @@ const bankSlice = createSlice({
         return;
       }
       state.balance -= action.payload;
+      state.transactions.push({
+        type: 'withdraw',
+        amount: action.payload,
+        timestamp: new Date().toLocaleString("ko-KR")
+      })
     }
   }
 })

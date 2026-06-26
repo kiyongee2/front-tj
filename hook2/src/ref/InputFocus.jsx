@@ -13,6 +13,11 @@ function InputFocus() {
   const handleSubmit = () => {
     // input 요소의 현재 값을 알림으로 표시
     // alert(`환영합니다. ${inputRef.current.value}님`); 
+    if(!inputRef.current.value){
+      alert("이름을 입력하세요.");
+      return;
+    }
+      
     console.log(`환영합니다. ${inputRef.current.value}님`);
     
     inputRef.current.focus();  // 버튼 클릭 후에도 input 요소에 포커스 유지

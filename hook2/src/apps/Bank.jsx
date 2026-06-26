@@ -9,6 +9,8 @@ const Bank = () => {
   const balance = useSelector(state => state.bank.balance);
   const [amount, setAmount] = useState(0);
 
+  const transactions = useSelector(state => state.bank.transactions)
+
   const dispatch = useDispatch();
 
   const handleDeposit = () => {
@@ -31,6 +33,14 @@ const Bank = () => {
       />
       <button onClick={handleDeposit}>입금</button>
       <button onClick={handleWithDraw}>출금</button>
+      <h3>거래 내역</h3>
+      <ul>
+        {transactions.map((transaction, index) => (
+          <li key={index}>
+            {transaction.type === 'deposit' ? '입금' : '출금'}: {transaction.amount}원
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
