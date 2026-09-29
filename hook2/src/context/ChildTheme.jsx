@@ -1,45 +1,25 @@
 
-import { useContext } from 'react';
-import { ThemeContext } from './ThemeContextProvider';
+import GrandChildTheme from './GrandChildTheme';
 
+// Child는 theme 관련 props를 전혀 받지 않습니다
+// GrandChild가 Context에서 직접 꺼내 씁니다 → props drilling 없음
 const ChildTheme = () => {
-  // ThemeContext에서 현재 테마 값과 toggleTheme 함수를 가져옵니다.
-  const { currentTheme, toggleTheme } = useContext(ThemeContext); 
-  console.log("현재 테마:", currentTheme); 
 
-  // 테마에 따른 스타일 정의
-  const childStyle = {
-    backgroundColor: currentTheme === "dark" ? '#555' : '#f0f0f0',
-    color: currentTheme === "dark" ? '#f0f0f0' : '#555',
-    padding: '20px',
-    height: '70vh', /* 부모보다 조금 더 높게 설정 */
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  };
-
-  const buttonStyle = {
-    padding: '10px 20px',
-    marginTop: '10px',
-    fontSize: '16px',
-    backgroundColor: currentTheme === "dark" ? '#333' : '#ddd',
-    color: currentTheme === "dark" ? '#f0f0f0' : '#333',
-    border: 'none',
-    cursor: 'pointer',
-    borderRadius: '4px',
+  const style = {
+    padding: '15px',
+    border: '2px dashed #aaa',
+    borderRadius: '8px',
+    margin: '10px',
   };
 
   return (
-    <>
-    <div style={childStyle}>
-      <div style={{ textAlign: 'center' }}>
-        <h2 style={{ color: 'inherit' }}>현재 테마: {currentTheme}</h2>
-        <button onClick={toggleTheme} style={buttonStyle}>테마 변경</button>
-      </div>
+    <div style={style}>
+      <h3>Child 컴포넌트</h3>
+      <p>theme props를 받지 않아도 GrandChild가 Context에서 직접 사용합니다.</p>
+      <GrandChildTheme />
     </div>
-    </>
   );
-}
+};
 
 export default ChildTheme;
 

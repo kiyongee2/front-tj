@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext} from 'react';
 import UserChild from './UserChild';
 
 // UserContext를 생성합니다. 기본값은 빈 객체입니다.

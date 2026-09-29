@@ -3,7 +3,7 @@ import { UserContext } from './User';
 
 const UserGrandChild = () => {
   // UserContext에서 user 데이터를 가져옵니다.
-  const user = useContext(UserContext);
+const user = useContext(UserContext);
 
   return (
     <div className='user-grandchild'>
