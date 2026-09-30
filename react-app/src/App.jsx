@@ -5,6 +5,8 @@ import Example01 from './components/Example01'
 import Example03 from './components/Example03'
 import Dog from './components/Dog.jsx'
 import Dog2 from './components/Dog2.jsx'
+import Box from './components/Box.jsx'
+import Profile from './card/Profile.jsx'
 
 function MyButton(){
   return(
@@ -39,16 +41,26 @@ function App() {
       </section>
       {/* 버튼 컴포넌트 */}
       <MyButton />
-      <Example01 />
-      <Example03 />
-      <Dog 
+      {/* <Example01 />
+      <Example03 /> */}
+      {/* <Dog 
         breed="말티즈"
         age={2}
       />
       <Dog2 
         breed="진돗개"
         age={4}
-      />
+      /> */}
+      {/* props - children */}
+      {/* <Box>
+        <h3>박스 안의 내용</h3>
+        <p>이것은 Box 컴포넌트 안에 있는 내용입니다.</p>
+      </Box>
+      <Box>
+        <h3>또 다른 박스</h3>
+        <p>이것은 또 다른 Box 컴포넌트 안에 있는 내용입니다.</p>
+      </Box> */}
+      <Profile />
     </>
   )
 }

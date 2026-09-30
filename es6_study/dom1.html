@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript 예제</title>
+</head>
+<body>
+  <h2>문서 객체 모델(DOM)</h2>
+  <p id="demo"></p>
+  <p class="display"></p>
+
+  <script>
+    const demo = document.getElementById("demo")
+    demo.innerText= "여기에 글이 출력됩니다.";
+
+    const display = document.querySelector(".display")
+    display.innerHTML = "<b>강조된 문장</b>"
+    display.style.color = "blue";
+    display.style.backgroundColor = "yellow";
+  </script>
+</body>
+</html>
