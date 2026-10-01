@@ -55,11 +55,13 @@ function App() {
         <button onClick={handleAddTodo}>추가</button>
 
         {/* 할 일 목록 */}
-        <ul>
+        <ul className='todo-list'>
           {todos.map((todo) => (
-            <li key={todo.id}>
+            <li key={todo.id} className={todo.completed ? 'completed' : ''}>
               <input 
                 type="checkbox" 
+                checked={todo.completed}
+                onChange={() => handleToggleComplete(todo.id)}
               />
               {todo.text}
               <button onClick={() => handleDeleteTodo(todo.id)}>삭제</button>
