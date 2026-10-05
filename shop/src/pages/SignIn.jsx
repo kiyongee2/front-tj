@@ -6,7 +6,7 @@ const SignIn = ({ onLogin }) => {
   const navigate = useNavigate(); // 페이지 이동을 위한 훅
   // 1. 입력 데이터를 객체로 통합
   const [loginData, setLoginData] = useState(
-    { userId: '', password: '' }
+    { username: '', password: '' }
   );
   // 로그인 결과 상태 (성공, 실패, 또는 null)
   const [result, setResult] = useState(null);
@@ -23,17 +23,17 @@ const SignIn = ({ onLogin }) => {
   // 3. 제출 핸들러
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { userId, password } = loginData;
+    const { username, password } = loginData;
 
     //find 메서드로 사용자 데이터에서 첫번째 일치하는 항목 찾기
     const matched = users.find(
-      (user) => user.userId === userId && user.password === password
+      (user) => user.username === username && user.password === password
     );
 
     // 로그인 성공 여부에 따라 결과 상태 업데이트
     if (matched) {
       setResult('success');
-      onLogin(userId); // App에 로그인 정보 전달
+      onLogin(username); // App에 로그인 정보 전달
       navigate('/');
     } else {
       setResult('fail');
@@ -46,10 +46,10 @@ const SignIn = ({ onLogin }) => {
       <form onSubmit={handleSubmit} className='signin-form'>
         <div>
           <input
-            name="userId" // name 추가
+            name="username" // name 추가
             type="text"
             placeholder="ID 입력"
-            value={loginData.userId}
+            value={loginData.username}
             onChange={handleChange}
           />
         </div>
@@ -68,11 +68,12 @@ const SignIn = ({ onLogin }) => {
       </form>
 
       {/* 결과 메시지 부분 */}
-      {result === 'success' && (
-        <p style={{ color: 'green' }}>환영합니다, {loginData.userId}님.</p>
-      )}
       {result === 'fail' && (
-        <p style={{ color: 'red' }}>아이디 또는 비밀번호가 올바르지 않습니다.</p>
+        <p style={{ 
+          color: 'red', 
+          textAlign: 'center',
+          marginTop: '10px'
+        }}>아이디 또는 비밀번호가 올바르지 않습니다.</p>
       )}
     </div>
   );

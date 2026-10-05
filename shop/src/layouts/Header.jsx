@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 
-const Header = ({ isLoggedIn, userId, onLogout }) => {
+const Header = ({ isLoggedIn, username, onLogout }) => {
   const navigate = useNavigate() // 페이지 이동을 위한 훅
 
   return (
@@ -12,7 +12,7 @@ const Header = ({ isLoggedIn, userId, onLogout }) => {
       <Link to="/add-product">상품 등록</Link>
       {isLoggedIn ? (
         <div className="header-user">
-          <span>{userId}님</span>
+          <span>{username}님</span>
           <button 
             type="button" 
             className="logout-btn" 

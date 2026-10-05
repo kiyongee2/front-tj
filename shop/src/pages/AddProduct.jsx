@@ -2,12 +2,13 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const AddProduct = () => {
-  const navigate = useNavigate() // 페이지 이동을 위한 훅
   const [formData, setFormData] = useState({
     name: '',
     price: '',
     description: ''
   })
+
+  const navigate = useNavigate() // 페이지 이동을 위한 훅
 
   // 입력값 변경 핸들러
   const handleChange = (e) => {
@@ -35,23 +36,19 @@ const AddProduct = () => {
     }
 
     // 상품 추가 처리 (실제로는 API 호출)
-    console.log('상품 추가:', formData)
-    alert('상품이 등록되었습니다.')
-    
+    console.log('상품 추가:', formData);
+    alert('상품이 등록되었습니다.');
+    navigate("/products");
+  }
+
+  // 취소 버튼 핸들러
+  const handleCancel = () => {
     // 초기화
     setFormData({
       name: '',
       price: '',
       description: ''
     })
-
-    // 상품 리스트 페이지로 이동
-    navigate('/products')
-  }
-
-  // 취소 버튼 핸들러
-  const handleCancel = () => {
-    navigate('/products')
   }
 
   return (

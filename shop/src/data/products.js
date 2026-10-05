@@ -1,5 +1,5 @@
-
-export const products = [
+// 상품 데이터 목록 - data/products.js
+const products = [
   {
     id: 1,
     name: '모니터', 
@@ -20,4 +20,5 @@ export const products = [
   },
 ]
 
+export default products;
 
