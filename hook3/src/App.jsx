@@ -1,28 +1,25 @@
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import './App.css'
-import Car from './components/Car'
-import Drinks from './components/Drinks'
-import Drinks2 from './components/Drinks2'
-import InputValue from './test/InputValue'
-import Like from './test/Like'
-import Loading from './test/Loading'
-import MapTest from './test/MapTest'
 import SignUp from './users/SignUp'
 import SignIn from './users/SingIn'
+import Home from './layouts/Home'
+import Header from './layouts/Header'
 
 function App() {
 
   return (
     <>
       <section className="app">
-        {/* <Car /> */}
-        {/* <Drinks /> */}
-        {/* <Drinks2 /> */}
-        {/* <Like /> */}
-        {/* <InputValue /> */}
-        {/* <Loading /> */}
-        {/* <MapTest /> */}
-        <SignIn />
-        {/* <SignUp /> */}
+        <BrowserRouter>
+          <Header />
+          <div>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path="/sign-in" element={<SignIn />} />
+              <Route path="/sign-up" element={<SignUp />} />
+            </Routes>
+          </div>
+        </BrowserRouter>
       </section>
     </>
   )

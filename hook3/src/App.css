@@ -1,3 +1,11 @@
+/* Header 스타일 */
+.header{
+  margin: 30px;
+}
+.header a{
+  margin: 10px;
+}
+
 /* 회원가입 폼 스타일 */
 .sign-up {
   width: 500px;
