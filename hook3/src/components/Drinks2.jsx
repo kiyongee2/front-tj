@@ -5,9 +5,10 @@ const Drinks2 = () => {
   const [drinks, setDrinks] = useState([]);
 
   const [inputValue, setInputValue] = useState('');
+  console.log(drinks);
 
   const addDrink = () => {
-    const newDrink = inputValue;
+    const newDrink = inputValue.trim();
     if(newDrink == ''){
       alert("음료를 입력하세요");
       return;

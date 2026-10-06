@@ -3,13 +3,20 @@ import { useEffect, useState } from "react";
 export default function Clock(){
   const [time, setTime] = useState(new Date().toLocaleTimeString());
 
-  useEffect(() => {
+  /*useEffect(() => {
     setInterval(() => {
     setTime(new Date().toLocaleTimeString())
   }, 1000);
     console.log("렌더링...");
-  }, [])
-  
+  }, [])*/
+
+  useEffect(() => {
+    setInterval(() => {
+      setTime(new Date().toLocaleTimeString())
+    }, 1000);
+    console.log("렌더링...");
+  }, []);
+
   return(
     <div>
       <h2>디지털 시계</h2>

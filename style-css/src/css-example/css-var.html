@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Variables Example</title>
+  <style>
+    :root{
+      --red-color: rgb(212, 60, 60);
+      --green-color: rgb(45, 238, 45);
+
+      --my-2: 0.5rem;
+      --my-3: 1rem;
+    }
+    h2{
+      color: var(--red-color);
+    }
+    div{
+      width: 100px;
+      height: 100px;
+      background-color: var(--green-color);
+      margin: var(--my-3);
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <h2>스타일 변수</h2>
+  <div></div>
+  <div></div>
+</body>
+</html>

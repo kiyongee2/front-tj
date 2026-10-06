@@ -7,13 +7,14 @@ const User = () => {
   useEffect(() => {
     console.log("렌더링...");
     console.log(`이름: ${name}, 나이: ${age}`);
-  }, [age])
+  }, [name]);
 
   //이름 변경
   const onChangeName = (e) => {
     setName(e.target.value);
   }
 
+  //나이 변경
   const onChangeAge = (e) => {
     setAge(e.target.value);
   }

@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #333;
   margin-bottom: 20px;
 `;

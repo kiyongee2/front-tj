@@ -4,6 +4,10 @@ import SignUp from './users/SignUp'
 import SignIn from './users/SingIn'
 import Home from './layouts/Home'
 import Header from './layouts/Header'
+import InputValue from './components/InputValue'
+import Drinks2 from './components/Drinks2'
+import Clock from './use_effects/Clock'
+import User from './use_effects/User'
 
 function App() {
 

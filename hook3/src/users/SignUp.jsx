@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const SignUp = () => {
-  // 폼 데이터 상태 관리
+  // 폼 데이터를 객체 형태로 관리
   const [formData, setFormData] = useState({
     name: "",
     job: "회사원",
