@@ -7,6 +7,7 @@ import ProductList from './pages/ProductList'
 import ProductInfo from './pages/ProductInfo'
 import AddProduct from './pages/AddProduct'
 import SignIn from './pages/SignIn'
+import SignUp from './pages/SignUp'
 
 function App() {
   // 로그인 상태 관리
@@ -37,6 +38,7 @@ function App() {
             <Route path="/products/:id" element={<ProductInfo />} />
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/signin" element={<SignIn onLogin={handleLogin} />} />
+            <Route path='/signup' element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </div>

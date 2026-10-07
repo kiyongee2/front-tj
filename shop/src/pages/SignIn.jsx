@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import users from '../data/users';
 
 const SignIn = ({ onLogin }) => {
@@ -26,8 +26,8 @@ const SignIn = ({ onLogin }) => {
     const { username, password } = loginData;
 
     //find 메서드로 사용자 데이터에서 첫번째 일치하는 항목 찾기
-    const matched = users.find(
-      (user) => user.username === username && user.password === password
+    const matched = users.find((user) => 
+      user.username === username && user.password === password
     );
 
     // 로그인 성공 여부에 따라 결과 상태 업데이트
@@ -43,7 +43,7 @@ const SignIn = ({ onLogin }) => {
   return (
     <div className='sign-in'>
       <h2>로그인</h2>
-      <form onSubmit={handleSubmit} className='signin-form'>
+      <form onSubmit={handleSubmit}>
         <div>
           <input
             name="username" // name 추가
@@ -55,7 +55,7 @@ const SignIn = ({ onLogin }) => {
         </div>
         <div>
           <input
-            name="password" // name 추가
+            name="password" //name 추가
             type="password"
             placeholder="패스워드 입력"
             value={loginData.password}
@@ -66,6 +66,11 @@ const SignIn = ({ onLogin }) => {
           <button type="submit">로그인</button>
         </div>
       </form>
+
+      {/* 회원 가입 링크 */}
+      <p className='signup-link'>
+        아직 계정이 없으신가요? <Link to="/signup" >회원가입</Link>
+      </p>
 
       {/* 결과 메시지 부분 */}
       {result === 'fail' && (
