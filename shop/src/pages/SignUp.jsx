@@ -10,7 +10,7 @@ const SignUp = () => {
     memo: ""      //자기 소개
   });
 
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // 페이지 이동을 위한 훅
 
   // 모든 입력 필드의 변경을 처리하는 함수
   const handleInputChange = (e) => {
@@ -34,6 +34,12 @@ const SignUp = () => {
       return
     }
 
+    // 회원가입 후 로그인 페이지로 이동
+    alert("회원가입이 등록되었습니다.");
+    navigate("/signin");
+  }
+
+  const handleCancel = () => {
     // 입력 필드 초기화
     setFormData({
       name: "",
@@ -41,10 +47,6 @@ const SignUp = () => {
       gender: "male",
       memo: ""
     });
-
-    // 회원가입 후 로그인 페이지로 이동
-    alert("회원가입이 등록되었습니다.");
-    navigate("/signin");
   }
 
   return(
@@ -84,7 +86,7 @@ const SignUp = () => {
             />남자</label>
             <label><input 
               type="radio"
-              name="gender"
+              name="gender" 
               value="female"
               checked={formData.gender === "female"}
               onChange={handleInputChange}
@@ -103,6 +105,7 @@ const SignUp = () => {
         </div>
         <div>
           <button type="submit">가입</button>
+          <button type="button" onClick={handleCancel}>취소</button>
         </div>
       </form>
     </div>

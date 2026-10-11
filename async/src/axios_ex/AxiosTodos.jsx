@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // JSONPlaceholder에서 사용자 데이터를 가져오는 예시
 const AxiosTodos = () => {
-    const [data, setData] = useState([]);
+    const [datas, setData] = useState([]);
 
     useEffect(() => {
         // JSONPlaceholder API에서 할 일 데이터를 가져옵니다.
@@ -21,7 +21,7 @@ const AxiosTodos = () => {
         <div className="axios-todos">
           <h2>할 일(To-do) 데이터</h2>
           <ul>
-            {data.map((todo) => (
+            {datas.map((todo) => (
               <li key={todo.id}>
                 <Link to={`/axios/${todo.id}`}>{todo.title}</Link>
               </li>

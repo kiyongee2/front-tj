@@ -18,7 +18,7 @@ const ProductList = () => {
         console.error('상품 목록 조회 에러:', error)
       }
     }
-    fetchProducts() // 컴포넌트가 마운트될 때 상품 목록 조회 함수 호출
+    fetchProducts() // 상품 목록 조회 함수 호출
   }, [])
 
   return (

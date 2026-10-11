@@ -16,4 +16,4 @@ function displayC() {
 }
 
 displayA();  // displayB();  // 비동기 함수이므로, displayC보다 먼저 실행됨
-displayB(displayC);  
+displayB(displayC);  // A -> B -> C 순서로 출력됨

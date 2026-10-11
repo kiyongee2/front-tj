@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 //상품 목록 조회 라우트 설정
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
   const sql = 'SELECT * FROM product';
   db.query(sql, (err, results) => {
     if (err) {
@@ -51,7 +51,7 @@ app.get('/products', (req, res) => {
 app.use(express.json());
 
 // 상품 등록 페이지 요청 라우트 설정
-app.post('/products', (req, res) => {
+app.post('/api/products', (req, res) => {
   const { productName, price } = req.body; // 요청 본문에서 상품 이름과 가격 추출
   const sql = 'INSERT INTO product (product_name, price) VALUES (?, ?)';
   db.query(sql, [productName, price], (err, results) => {
@@ -66,7 +66,7 @@ app.post('/products', (req, res) => {
 });
 
 // 상품 상세 조회 라우트 설정
-app.get('/products/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
   const productId = req.params.id; // URL 경로에서 상품 ID 추출
   const sql = 'SELECT * FROM product WHERE id = ?';
   db.query(sql, [productId], (err, results) => {
@@ -80,7 +80,7 @@ app.get('/products/:id', (req, res) => {
 });
 
 // 상품 삭제 라우트 설정
-app.delete('/products/:id', (req, res) => {
+app.delete('/api/products/:id', (req, res) => {
   const productId = req.params.id; // URL 경로에서 상품 ID 추출
   const sql = 'DELETE FROM product WHERE id = ?';
   db.query(sql, [productId], (err, results) => {
@@ -94,7 +94,7 @@ app.delete('/products/:id', (req, res) => {
 });
 
 // 상품 수정 라우트 설정
-app.put('/products/:id', (req, res) => {
+app.put('/api/products/:id', (req, res) => {
   const productId = req.params.id; // URL 경로에서 상품 ID 추출
   const { productName, price } = req.body; // 요청 본문에서 상품 이름과 가격 추출
   const sql = 'UPDATE product SET product_name = ?, price = ? WHERE id = ?';
