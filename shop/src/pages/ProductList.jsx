@@ -7,7 +7,7 @@ const ProductList = () => {
   return (
     <section className="product-list">
       <h2>상품 리스트</h2>
-      <table className="table-list">
+      <table>
         <thead>
           <tr>
             <th>상품ID</th>
@@ -20,22 +20,15 @@ const ProductList = () => {
           {products.map((product) => (
             <tr key={product.id}>
               <td>{product.id}</td>
-              <td><Link to={`/products/${product.id}`}>{product.name}</Link></td>
+              <td>
+                <Link to={`/products/${product.id}`}>{product.name}</Link>
+              </td>
               <td>{product.price}</td>
               <td>{product.description}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      {/* {products.map((product) => (
-        <div key={product.id}>
-          <h3>
-            <Link to={`/products/${product.id}`}>{product.name}</Link>
-          </h3>
-          <p>가격: {product.price}원</p>
-          <p>설명: {product.description}</p>
-        </div>
-      ))} */}
       <div className="btn-add">
         <Link to="/add-product">
           <button type="button">상품 등록하기</button>

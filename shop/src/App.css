@@ -34,10 +34,9 @@
 .main img {margin-top: 20px;}
 
 /* 상품 목록 스타일 */
-.product-list {width: 1000px; margin: 0 auto; text-align: left;}
-.table-list {width: 60%; margin: 0 auto; border-collapse: collapse;}
-.table-list th, .table-list td {border: 1px solid #ddd;padding: 8px;}
-.table-list th {text-align: center; background-color: #f2f2f2;}
+.product-list table{width: 60%; margin: 20px auto; border-collapse: collapse;}
+.product-list table th, td {border: 1px solid #ddd;padding: 8px;}
+.product-list table th {background-color: #f2f2f2;}
 .product-list .btn-add {text-align: right; margin-top: 20px; margin-right: 20%;}
 .product-list .btn-add button {
   padding: 10px 20px;
@@ -47,20 +46,17 @@
   border: none;
   cursor: pointer;
 }
-.btn-add button:hover {background-color: #0056b3;}
+.product-list .btn-add button:hover {background-color: #0056b3;}
 
 /* 상품 상세 정보 */
-.product-info{width: 60%; margin: 0 auto;}
-.product-details {
-  width: 50%;
-  margin: 0 auto;
-  text-align: left;
-  border: 1px solid #ddd;
-  padding: 20px;
+.product-info .detail{
+  width: 50%; 
+  margin: 20px auto; 
+  background-color: #f9f9f9; 
+  padding: 20px; 
   border-radius: 8px;
-  background-color: #f0f0f0;
 }
-.product-details p {margin-bottom: 10px;}
+.product-info .detail p {margin-bottom: 16px;}
 .product-info .btn-list{
   text-align: right;
   margin-top: 20px;
@@ -75,8 +71,12 @@
 }
 
 /* 상품 등록 폼 */
-.add-product{width: 40%; margin: 0 auto; text-align: left;}
-.add-product form label {display: block; margin-bottom: 8px; font-weight: bold;}
+.add-product form{width: 40%; margin: 0 auto; text-align: left;}
+.add-product form label {
+  display: block; 
+  margin-bottom: 8px; 
+  font-weight: bold;
+}
 .add-product form input,
 .add-product form textarea {
   width: 100%;
@@ -99,7 +99,7 @@
 .add-product form button[type="button"]:hover {background-color: #5a6268;}
 
 /* 로그인 폼 */
-.sign-in{width: 30%; margin: 0 auto; text-align: left;}
+.sign-in form{width: 30%; margin: 20px auto; text-align: left;}
 .sign-in form input {
   width: 100%;
   padding: 8px;
@@ -132,7 +132,7 @@
 }
 
 /* 회원가입 폼 스타일 */
-.sign-up{width: 40%; margin: 0 auto; text-align: left;}
+.sign-up form{width: 40%; margin: 20px auto; text-align: left;}
 .sign-up form label {display: block; margin-bottom: 8px; font-weight: bold;}
 .sign-up form input,
 .sign-up form textarea {

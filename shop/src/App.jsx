@@ -32,14 +32,16 @@ function App() {
       <div className="app">
         <BrowserRouter>
           <Header isLoggedIn={isLoggedIn} username={username} onLogout={handleLogout} />
-          <Routes>
-            <Route path="/" element={<Main />} />
-            <Route path="/products" element={<ProductList />} />         
-            <Route path="/products/:id" element={<ProductInfo />} />
-            <Route path="/add-product" element={<AddProduct />} />
-            <Route path="/signin" element={<SignIn onLogin={handleLogin} />} />
-            <Route path='/signup' element={<SignUp />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Main />} />
+              <Route path="/products" element={<ProductList />} />         
+              <Route path="/products/:id" element={<ProductInfo />} />
+              <Route path="/add-product" element={<AddProduct />} />
+              <Route path="/signin" element={<SignIn onLogin={handleLogin} />} />
+              <Route path='/signup' element={<SignUp />} />
+            </Routes>
+          </div>
         </BrowserRouter>
       </div>
     </>

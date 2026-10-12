@@ -15,7 +15,7 @@ const ProductInfo = () => {
   return (
     <section className="product-info">
       <h2>상품 정보</h2>
-      <div className="product-details">
+      <div className="detail">
         <p>상품 ID: {id}</p>
         <p>상품 이름: {product.name}</p>
         <p>상품 가격: {product.price}</p>
