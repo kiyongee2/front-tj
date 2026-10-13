@@ -18,13 +18,14 @@ function App() {
           {/* Fetch Todo */}
           {/* <Route path="/" element={<FetchTodos />} />
           <Route path="/:id" element={<FetchTodoById />} /> */}
-
+          
           {/* Axios Todo */}
           <Route path="/axios" element={<AxiosTodos />} />
           <Route path="/axios/:id" element={<AxiosTodoById />} />
           <Route path="/axios-post" element={<AxiosPost />} />
         </Routes>
       </BrowserRouter>
+      {/* <FetchTodos /> */}
     </section>
   )
 }

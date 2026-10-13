@@ -20,7 +20,7 @@ const AxiosTodoById = () => {
   return (
     <div className="axios-todo-by-id">
       <h2>할 일(To-do) 데이터</h2>
-      {data && (
+      {/* {data && (
         <div>
           <p>
             <strong>제목: </strong> {data.title}
@@ -30,6 +30,17 @@ const AxiosTodoById = () => {
             {data.completed ? " ● 완료" : " ○ 미완료"}
           </p>
         </div>
+      )} */}
+      {data ? (
+        <div>
+          <p><strong>제목:</strong> {data.title}</p>
+          <p>
+            <strong>완료 여부:</strong>
+            {data.completed ? "● 완료" : "○ 미완료"}
+          </p>
+        </div>
+      ) : (
+        <p>불러오는 중...</p>
       )}
     </div>
   );
