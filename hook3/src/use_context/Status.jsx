@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { AuthContext } from "./AuthContext";
 // import { AuthContext } from "./AuthProvider";
 
-export function Status() {
+export function Status2() {
   // AuthContext에서 상태와 함수를 가져오기
   const { isLogin, toggleLogin } = useContext(AuthContext);
 

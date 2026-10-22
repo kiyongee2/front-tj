@@ -4,7 +4,7 @@ import { AuthContext } from "./AuthContext";
 
 // export const AuthContext = createContext();
 
-export function AuthProvider({ children }) {
+export function AuthProvider2({ children }) {
   const [isLogin, setIsLogin] = useState(false); 
   // 로그인 상태를 토글하는 함수
   const toggleLogin = () => setIsLogin((prev) => !prev); 
