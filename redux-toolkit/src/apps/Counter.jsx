@@ -1,4 +1,4 @@
-
+// counterSlice에서 export한 액션 생성 함수를 가져옴
 import { 
   increment, 
   decrement, 
@@ -6,9 +6,7 @@ import {
   reset 
 } from "../store/counterSlice"
 import { useState } from "react"
-
 import { useSelector, useDispatch } from "react-redux"
-// counterSlice에서 export한 액션 생성 함수를 가져옴
 
 const Counter = () => {
   // store의 state에서 count 값을 가져옴
@@ -18,7 +16,7 @@ const Counter = () => {
 
   // input 값이 변경될 때마다 state를 업데이트하는 함수
   const handleInputChange = (e) => {
-    setInputValue(Number(e.target.value))
+    setInputValue(Number(e.target.value));
   }
   
   // dispatch 함수를 가져옴 - 액션을 dispatch할 때 사용
@@ -34,11 +32,13 @@ const Counter = () => {
       <h2>Counter</h2>
       <div>
         <p>Count: {count}</p>
+        {/* 1씩 증가 */}
         <button onClick={() => dispatch(increment())}>증가</button>
         <button onClick={() => dispatch(decrement())}>감소</button>
         <button onClick={() => dispatch(reset())}>초기화</button>
       </div>
       <div>
+        {/* 입력값 만큼 증가 */}
         <input 
           type="number" 
           onChange={handleInputChange}
