@@ -7,7 +7,7 @@ const Button = styled.button`
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 1rem;
-  line-height: 1.5; // 버튼의 높이를 텍스트의 높이에 맞게 조정
+  line-height: 2; // 버튼의 높이를 텍스트의 높이에 맞게 조정
 
   // props를 이용하여 스타일을 동적으로 변경
   color: ${props => props.color || 'black'};

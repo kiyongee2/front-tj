@@ -6,7 +6,6 @@ const bankReducer = (state, action) => {
 
   switch(action.type){
     case 'DEPOSIT':
-      // return {balance: state.balance + action.payload};
       return {...state, balance: state.balance + action.payload};
     case 'WITHDRAW':
       if(state.balance < action.payload){

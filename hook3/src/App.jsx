@@ -47,6 +47,7 @@ function App() {
         <AuthProvider>
           <Status />
         </AuthProvider>
+        {/* <BankReducer /> */}
       </section>
     </>
   )

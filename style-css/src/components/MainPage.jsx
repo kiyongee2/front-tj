@@ -1,5 +1,3 @@
-
-import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -7,9 +5,9 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // 100vh는 브라우저 창의 높이를 의미,  예) 창 높이 1000px일때, 
-  // 50vh(viewport height) = 50*(창높이/100) = 500px
-  height: 100vh; 
+  /* 100vh는 브라우저 창의 높이를 의미,  예) 창 높이 1000px일때, 
+     50vh(viewport height) = 50*(창높이/100) = 500px */
+  height: 50vh; 
 `;
 
 const Title = styled.h1`

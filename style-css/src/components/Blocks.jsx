@@ -4,8 +4,8 @@ import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  // flex-direction: row;
+  // align-items: flex-start;
   justify-content: center;
   gap: 20px;
   padding: 40px;
@@ -37,15 +37,15 @@ const Blocks = () => {
     <Wrapper>
       <Block 
         color="#f00" 
-        onClick={() => handleClick('red')}
+        onClick={() => handleClick('#f00')}
       />
       <Block 
         color="#0f0" 
-        onClick={() => handleClick('green')}
+        onClick={() => handleClick('#0f0')}
       />
       <Block 
         color="#00f" 
-        onClick={() => handleClick('blue')}
+        onClick={() => handleClick('#00f')}
       />
       {/* {clicked && <p>클릭한 색상: {clicked}</p>} */}
       {clicked && <p style={{ color: textColor }}>클릭한 색상: {clicked}</p>}

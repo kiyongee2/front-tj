@@ -11,6 +11,7 @@ const DynamicButton = styled.button`
 const ButtonSample2 = () => {
   return (
     <>
+      {/* <DynamicButton >클릭</DynamicButton> */}
       <DynamicButton large primary>클릭</DynamicButton>
     </>
   );
