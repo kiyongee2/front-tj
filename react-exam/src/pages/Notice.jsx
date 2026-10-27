@@ -11,9 +11,7 @@ const Notice = () => {
         const res = await axios.get("https://jsonplaceholder.typicode.com/posts?_limit=10");
         setPosts(res.data);
       }catch(error){
-        console.error("데이터를 불러오지 못했습니다.");
-      }finally{
-        setLoading(false);
+        console.error("데이터를 불러오지 못했습니다.", error);
       }
     }
     fetchPosts();

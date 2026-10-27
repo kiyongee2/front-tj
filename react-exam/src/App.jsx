@@ -3,23 +3,26 @@ import './App.css'
 import Header from './layouts/Header';
 import ProductList from './pages/ProductList';
 import Notice from './pages/Notice';
+import ProductDetail from './pages/ProductDetail';
+import { CartProvider } from './context/CartContext';
+import CartPage from './pages/CartPage';
 
 function App() {
 
   return (
-    <>
-      <section className="app">
-        <BrowserRouter>
-          <Header />
-          <main>
-            <Routes>
-              <Route path='/' element={<ProductList />} />
-              <Route path='/notice' element={<Notice />} />
-            </Routes>
-          </main>
-        </BrowserRouter>
-      </section>
-    </>
+    <CartProvider>
+      <BrowserRouter>
+        <Header />
+        <main>
+          <Routes>
+            <Route path='/' element={<ProductList />} />
+            <Route path='/product/:id' element={<ProductDetail />} />
+            <Route path='/notice' element={<Notice />} />
+            <Route path='/cart' element={<CartPage />} />
+          </Routes>
+        </main>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 

@@ -1,4 +1,4 @@
-import products from '../datas/products'
+import { products } from '../datas/products'
 import ProductCard from './ProductCard'
 
 const ProductList = () => {

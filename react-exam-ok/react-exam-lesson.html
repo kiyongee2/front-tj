@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SPACE SHOP 학습 교안</title>
+<style>
+  :root {
+    --bg: #f7f7f5;
+    --surface: #ffffff;
+    --text: #1f2328;
+    --muted: #5f6670;
+    --border: #e3e3df;
+    --accent: #3b5bdb;
+    --accent-soft: #edf1ff;
+    --code-bg: #f1f2f4;
+    --pre-bg: #1e2230;
+    --pre-text: #e6e8ef;
+    --tip: #2b8a3e;
+    --tip-soft: #ebf7ee;
+    --warn: #c2410c;
+    --warn-soft: #fff4ec;
+    --kw: #c792ea;
+    --str: #a5d6a7;
+    --cm: #8a93a8;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171c;
+      --surface: #1d2027;
+      --text: #e6e8ec;
+      --muted: #9aa1ad;
+      --border: #2e323b;
+      --accent: #8ca4ff;
+      --accent-soft: #232a45;
+      --code-bg: #2a2e37;
+      --pre-bg: #0f1117;
+      --tip: #69db7c;
+      --tip-soft: #1c2d22;
+      --warn: #ffa94d;
+      --warn-soft: #33261a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171c;
+    --surface: #1d2027;
+    --text: #e6e8ec;
+    --muted: #9aa1ad;
+    --border: #2e323b;
+    --accent: #8ca4ff;
+    --accent-soft: #232a45;
+    --code-bg: #2a2e37;
+    --pre-bg: #0f1117;
+    --tip: #69db7c;
+    --tip-soft: #1c2d22;
+    --warn: #ffa94d;
+    --warn-soft: #33261a;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    max-width: 1180px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 32px 24px 80px;
+  }
+  nav.toc {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    font-size: 14px;
+  }
+  nav.toc strong { display: block; margin-bottom: 8px; color: var(--muted); font-size: 12px; letter-spacing: .08em; }
+  nav.toc ol { list-style: none; margin: 0; padding: 0; }
+  nav.toc a {
+    display: block;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.toc a:hover { background: var(--accent-soft); color: var(--accent); }
+
+  header.hero { margin-bottom: 40px; }
+  header.hero .eyebrow { color: var(--accent); font-weight: 700; font-size: 14px; letter-spacing: .05em; }
+  header.hero h1 { font-size: 34px; line-height: 1.3; margin: 6px 0 12px; }
+  header.hero p { color: var(--muted); margin: 0; max-width: 680px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .chip {
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+
+  section.lesson {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    scroll-margin-top: 20px;
+  }
+  section.lesson h2 { margin: 0 0 4px; font-size: 24px; }
+  section.lesson .goal { color: var(--muted); margin: 0 0 20px; font-size: 15px; }
+  h3 { font-size: 18px; margin: 28px 0 8px; }
+  code {
+    font-family: "D2Coding", "JetBrains Mono", Consolas, monospace;
+    background: var(--code-bg);
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-size: .9em;
+  }
+  pre {
+    background: var(--pre-bg);
+    color: var(--pre-text);
+    padding: 16px 18px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.6;
+    position: relative;
+  }
+  pre code { background: none; padding: 0; font-size: inherit; }
+  pre[data-file]::before {
+    content: attr(data-file);
+    display: block;
+    font-size: 12px;
+    color: var(--cm);
+    margin-bottom: 8px;
+  }
+  .kw { color: var(--kw); }
+  .str { color: var(--str); }
+  .cm { color: var(--cm); font-style: italic; }
+
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-weight: 600; font-size: 14px; }
+  .table-wrap { overflow-x: auto; }
+
+  .callout {
+    border-left: 4px solid var(--tip);
+    background: var(--tip-soft);
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 16px 0;
+  }
+  .callout.warn { border-color: var(--warn); background: var(--warn-soft); }
+  .callout b { display: block; margin-bottom: 2px; }
+
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+  }
+  .flow .box {
+    border: 1px solid var(--border);
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  .flow .arrow { color: var(--muted); }
+
+  .tree {
+    font-family: "D2Coding", Consolas, monospace;
+    font-size: 14px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 18px;
+    white-space: pre;
+    overflow-x: auto;
+    line-height: 1.6;
+  }
+
+  details.quiz {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin: 10px 0;
+    background: var(--bg);
+  }
+  details.quiz summary { cursor: pointer; font-weight: 600; }
+  details.quiz[open] summary { margin-bottom: 8px; }
+
+  ol.steps li, ul.points li { margin: 4px 0; }
+
+  footer { color: var(--muted); font-size: 14px; text-align: center; margin-top: 40px; }
+
+  @media (max-width: 860px) {
+    .layout { grid-template-columns: 1fr; padding: 20px 16px 60px; gap: 16px; }
+    nav.toc { position: static; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px; }
+    section.lesson { padding: 20px 18px; }
+    header.hero h1 { font-size: 26px; }
+  }
+  @media print {
+    nav.toc { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    section.lesson { break-inside: avoid-page; }
+    details.quiz { display: block; }
+  }
+</style>
+</head>
+<body>
+<div class="layout">
+  <nav class="toc" aria-label="목차">
+    <strong>목차</strong>
+    <ol>
+      <li><a href="#overview">0. 프로젝트 개요</a></li>
+      <li><a href="#setup">1. 개발 환경과 구조</a></li>
+      <li><a href="#component">2. 컴포넌트와 props</a></li>
+      <li><a href="#list">3. 리스트 렌더링</a></li>
+      <li><a href="#router">4. 라우팅</a></li>
+      <li><a href="#reducer">5. useReducer</a></li>
+      <li><a href="#context">6. Context API</a></li>
+      <li><a href="#storage">7. useEffect와 localStorage</a></li>
+      <li><a href="#axios">8. 비동기 데이터 요청</a></li>
+      <li><a href="#search">9. 제어 컴포넌트와 검색</a></li>
+      <li><a href="#css">10. 반응형 스타일</a></li>
+      <li><a href="#practice">11. 실습 과제</a></li>
+      <li><a href="#review">12. 정리 퀴즈</a></li>
+    </ol>
+  </nav>
+
+  <main>
+    <header class="hero">
+      <div class="eyebrow">프런트엔드 프로그래밍 · React 실습</div>
+      <h1>SPACE SHOP으로 배우는 React 핵심 개념</h1>
+      <p>상품 목록 · 상세 · 장바구니 · 공지사항으로 구성된 작은 쇼핑몰을 만들어 보면서 컴포넌트, 라우팅, 전역 상태 관리, 비동기 통신을 차례대로 익힙니다.</p>
+      <div class="meta">
+        <span class="chip">React 19</span>
+        <span class="chip">React Router 7</span>
+        <span class="chip">Context + useReducer</span>
+        <span class="chip">axios</span>
+        <span class="chip">Vite</span>
+      </div>
+    </header>
+
+    <!-- 0 -->
+    <section class="lesson" id="overview">
+      <h2>0. 프로젝트 개요</h2>
+      <p class="goal">완성할 앱이 어떤 화면과 기능으로 이루어지는지 먼저 살펴봅니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>화면</th><th>경로</th><th>핵심 기능</th><th>배우는 개념</th></tr></thead>
+          <tbody>
+            <tr><td>상품 목록</td><td><code>/</code></td><td>상품 카드 나열, 장바구니 담기</td><td>컴포넌트, props, map</td></tr>
+            <tr><td>상품 상세</td><td><code>/product/:id</code></td><td>URL의 id로 상품 조회</td><td>useParams, useNavigate</td></tr>
+            <tr><td>장바구니</td><td><code>/cart</code></td><td>수량 증감, 삭제, 총액, 비우기</td><td>useReducer, Context</td></tr>
+            <tr><td>공지사항</td><td><code>/notice</code></td><td>외부 API 조회, 제목 검색</td><td>useEffect, axios, 제어 컴포넌트</td></tr>
+            <tr><td>404</td><td><code>*</code></td><td>잘못된 주소 안내</td><td>와일드카드 라우트</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 1 -->
+    <section class="lesson" id="setup">
+      <h2>1. 개발 환경과 프로젝트 구조</h2>
+      <p class="goal">Vite로 프로젝트를 실행하고, 폴더별 역할을 이해합니다.</p>
+
+      <h3>실행 명령</h3>
+<pre><code>npm install       <span class="cm"># 의존성 설치</span>
+npm install react-router-dom axios   <span class="cm"># 추가 라이브러리</span>
+npm run dev       <span class="cm"># 개발 서버 (http://localhost:5173)</span>
+npm run build     <span class="cm"># 배포용 빌드</span></code></pre>
+
+      <h3>폴더 구조</h3>
+<div class="tree">src/
+├── main.jsx            진입점: &lt;App /&gt;을 #root에 렌더링
+├── App.jsx             Provider · Router · 라우트 정의
+├── App.css             전역 스타일
+├── components/         여러 페이지에서 재사용하는 UI
+│   ├── Header.jsx
+│   └── ProductCard.jsx
+├── context/            전역 상태
+│   └── CartContext.jsx
+├── data/               정적 데이터
+│   └── products.js
+└── pages/              라우트 단위 화면
+    ├── ProductList.jsx
+    ├── ProductDetail.jsx
+    ├── CartPage.jsx
+    ├── Notice.jsx
+    └── NotFound.jsx</div>
+
+      <div class="callout">
+        <b>💡 폴더 나누는 기준</b>
+        <code>pages</code>는 "주소 하나에 대응하는 화면", <code>components</code>는 "여러 화면에서 쓰는 부품", <code>context</code>는 "앱 전체가 공유하는 상태"입니다.
+      </div>
+
+      <h3>전체 컴포넌트 트리</h3>
+<pre data-file="src/App.jsx"><code><span class="kw">export default function</span> App() {
+  <span class="kw">return</span> (
+    &lt;CartProvider&gt;            <span class="cm">{/* ① 장바구니 상태를 앱 전체에 공급 */}</span>
+      &lt;BrowserRouter&gt;         <span class="cm">{/* ② 주소(URL) 기반 화면 전환 */}</span>
+        &lt;Header /&gt;            <span class="cm">{/* ③ 모든 페이지 공통 */}</span>
+        &lt;main&gt;
+          &lt;Routes&gt;
+            &lt;Route path=<span class="str">"/"</span> element={&lt;ProductList /&gt;} /&gt;
+            &lt;Route path=<span class="str">"/product/:id"</span> element={&lt;ProductDetail /&gt;} /&gt;
+            &lt;Route path=<span class="str">"/cart"</span> element={&lt;CartPage /&gt;} /&gt;
+            &lt;Route path=<span class="str">"/notice"</span> element={&lt;Notice /&gt;} /&gt;
+            &lt;Route path=<span class="str">"*"</span> element={&lt;NotFound /&gt;} /&gt;
+          &lt;/Routes&gt;
+        &lt;/main&gt;
+      &lt;/BrowserRouter&gt;
+    &lt;/CartProvider&gt;
+  );
+}</code></pre>
+    </section>
+
+    <!-- 2 -->
+    <section class="lesson" id="component">
+      <h2>2. 컴포넌트와 props</h2>
+      <p class="goal">부모가 넘겨준 데이터(props)로 화면을 그리는 재사용 컴포넌트를 만듭니다.</p>
+
+      <p>컴포넌트는 <b>JSX를 반환하는 함수</b>입니다. 부모는 속성처럼 값을 넘기고, 자식은 매개변수의 구조 분해로 받습니다.</p>
+<pre data-file="src/components/ProductCard.jsx"><code><span class="kw">export default function</span> ProductCard({ product }) {   <span class="cm">// props 구조 분해</span>
+  <span class="kw">const</span> { dispatch } = useCart();
+  <span class="kw">return</span> (
+    &lt;div className=<span class="str">"card"</span>&gt;
+      &lt;span className=<span class="str">"category"</span>&gt;{product.category}&lt;/span&gt;
+      &lt;h3&gt;&lt;Link to={<span class="str">`/product/${product.id}`</span>}&gt;{product.name}&lt;/Link&gt;&lt;/h3&gt;
+      &lt;p className=<span class="str">"price"</span>&gt;{product.price.toLocaleString()}원&lt;/p&gt;
+      &lt;button onClick={() =&gt; dispatch({ type: <span class="str">"ADD"</span>, product })}&gt;담기&lt;/button&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+
+      <ul class="points">
+        <li><code>className</code>: JSX에서는 <code>class</code> 대신 <code>className</code>을 씁니다.</li>
+        <li><code>{ }</code>: JSX 안에서 자바스크립트 표현식을 사용할 때 감쌉니다.</li>
+        <li><code>toLocaleString()</code>: <code>25000</code> → <code>"25,000"</code>처럼 천 단위 구분 기호를 붙입니다.</li>
+        <li><code>onClick={() =&gt; ...}</code>: 함수를 <b>전달</b>해야 합니다. <code>onClick={dispatch(...)}</code>로 쓰면 렌더링하자마자 실행됩니다.</li>
+      </ul>
+    </section>
+
+    <!-- 3 -->
+    <section class="lesson" id="list">
+      <h2>3. 리스트 렌더링과 key</h2>
+      <p class="goal">배열 데이터를 <code>map()</code>으로 컴포넌트 목록으로 바꿉니다.</p>
+<pre data-file="src/data/products.js"><code><span class="kw">export const</span> products = [
+  { id: 1, name: <span class="str">"무선 마우스"</span>, category: <span class="str">"마우스"</span>, price: 25000, desc: <span class="str">"..."</span> },
+  { id: 2, name: <span class="str">"기계식 키보드"</span>, category: <span class="str">"키보드"</span>, price: 89000, desc: <span class="str">"..."</span> },
+  <span class="cm">// ... 총 6개</span>
+];</code></pre>
+<pre data-file="src/pages/ProductList.jsx"><code><span class="kw">export default function</span> ProductList() {
+  <span class="kw">return</span> (
+    &lt;section&gt;
+      &lt;h2&gt;상품 목록&lt;/h2&gt;
+      &lt;div className=<span class="str">"product-list"</span>&gt;
+        {products.map((p) =&gt; (
+          &lt;ProductCard key={p.id} product={p} /&gt;
+        ))}
+      &lt;/div&gt;
+    &lt;/section&gt;
+  );
+}</code></pre>
+      <div class="callout warn">
+        <b>⚠️ key는 왜 필요할까?</b>
+        React는 key로 "어떤 항목이 추가·삭제·이동했는지"를 구분합니다. 배열 인덱스보다 <b>변하지 않는 고유값(id)</b>을 쓰는 것이 안전합니다. key가 없으면 콘솔에 경고가 표시됩니다.
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="lesson" id="router">
+      <h2>4. React Router로 페이지 이동</h2>
+      <p class="goal"><code>Link</code>, <code>useParams</code>, <code>useNavigate</code>로 SPA 화면 전환을 구현합니다.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>도구</th><th>역할</th><th>사용 위치</th></tr></thead>
+          <tbody>
+            <tr><td><code>&lt;BrowserRouter&gt;</code></td><td>라우팅 기능 제공 (최상위에서 감쌈)</td><td>App</td></tr>
+            <tr><td><code>&lt;Routes&gt;</code> / <code>&lt;Route&gt;</code></td><td>경로와 화면 연결</td><td>App</td></tr>
+            <tr><td><code>&lt;Link to&gt;</code></td><td>새로고침 없이 이동 (a 태그 대체)</td><td>Header, ProductCard, NotFound</td></tr>
+            <tr><td><code>useParams()</code></td><td>URL 파라미터(<code>:id</code>) 읽기</td><td>ProductDetail</td></tr>
+            <tr><td><code>useNavigate()</code></td><td>코드로 이동 (<code>navigate("/")</code>, <code>navigate(-1)</code>)</td><td>ProductDetail</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+<pre data-file="src/pages/ProductDetail.jsx"><code><span class="kw">export default function</span> ProductDetail() {
+  <span class="kw">const</span> { id } = useParams();          <span class="cm">// "/product/3" → id === "3" (문자열!)</span>
+  <span class="kw">const</span> navigate = useNavigate();
+  <span class="kw">const</span> { dispatch } = useCart();
+
+  <span class="kw">const</span> product = products.find((p) =&gt; p.id === Number(id));
+
+  <span class="kw">if</span> (!product) {                       <span class="cm">// 없는 id 방어 처리</span>
+    <span class="kw">return</span> (
+      &lt;section&gt;
+        &lt;p&gt;상품을 찾을 수 없습니다.&lt;/p&gt;
+        &lt;button onClick={() =&gt; navigate(<span class="str">"/"</span>)}&gt;목록으로&lt;/button&gt;
+      &lt;/section&gt;
+    );
+  }
+
+  <span class="kw">return</span> (
+    &lt;section className=<span class="str">"detail"</span>&gt;
+      ...
+      &lt;button onClick={() =&gt; dispatch({ type: <span class="str">"ADD"</span>, product })}&gt;장바구니 담기&lt;/button&gt;
+      &lt;button onClick={() =&gt; navigate(-1)}&gt;뒤로가기&lt;/button&gt;
+    &lt;/section&gt;
+  );
+}</code></pre>
+
+      <div class="callout warn">
+        <b>⚠️ 자주 하는 실수</b>
+        <code>useParams()</code>의 값은 항상 <b>문자열</b>입니다. 숫자 id와 <code>===</code>로 비교하려면 <code>Number(id)</code>로 변환해야 합니다. 변환하지 않으면 상품을 하나도 찾지 못합니다.
+      </div>
+      <div class="callout">
+        <b>💡 404 처리</b>
+        <code>path="*"</code>는 위의 어떤 경로와도 일치하지 않을 때 선택됩니다. 존재하지 않는 <b>주소</b>는 NotFound가, 존재하지 않는 <b>상품 id</b>는 ProductDetail 안의 <code>if (!product)</code>가 처리합니다.
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="lesson" id="reducer">
+      <h2>5. useReducer로 장바구니 로직 만들기</h2>
+      <p class="goal">여러 종류의 상태 변경을 하나의 리듀서 함수로 모아 관리합니다.</p>
+
+      <div class="flow">
+        <span class="box">버튼 클릭</span><span class="arrow">→</span>
+        <span class="box"><code>dispatch({ type, ... })</code></span><span class="arrow">→</span>
+        <span class="box"><code>cartReducer(state, action)</code></span><span class="arrow">→</span>
+        <span class="box">새 state 반환</span><span class="arrow">→</span>
+        <span class="box">화면 다시 렌더링</span>
+      </div>
+
+<pre data-file="src/context/CartContext.jsx"><code><span class="kw">function</span> cartReducer(state, action) {
+  <span class="kw">switch</span> (action.type) {
+    <span class="kw">case</span> <span class="str">"ADD"</span>: {
+      <span class="kw">const</span> found = state.find((item) =&gt; item.id === action.product.id);
+      <span class="kw">if</span> (found) {                                   <span class="cm">// 이미 있으면 수량 +1</span>
+        <span class="kw">return</span> state.map((item) =&gt;
+          item.id === action.product.id ? { ...item, qty: item.qty + 1 } : item
+        );
+      }
+      <span class="kw">return</span> [...state, { ...action.product, qty: 1 }]; <span class="cm">// 없으면 새로 추가</span>
+    }
+    <span class="kw">case</span> <span class="str">"INCREASE"</span>:
+      <span class="kw">return</span> state.map((item) =&gt;
+        item.id === action.id ? { ...item, qty: item.qty + 1 } : item
+      );
+    <span class="kw">case</span> <span class="str">"DECREASE"</span>:
+      <span class="kw">return</span> state
+        .map((item) =&gt; (item.id === action.id ? { ...item, qty: item.qty - 1 } : item))
+        .filter((item) =&gt; item.qty &gt; 0);              <span class="cm">// 0개가 되면 제거</span>
+    <span class="kw">case</span> <span class="str">"REMOVE"</span>:
+      <span class="kw">return</span> state.filter((item) =&gt; item.id !== action.id);
+    <span class="kw">case</span> <span class="str">"CLEAR"</span>:
+      <span class="kw">return</span> [];
+    <span class="kw">default</span>:
+      <span class="kw">return</span> state;
+  }
+}</code></pre>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>액션</th><th>함께 보내는 값</th><th>결과</th><th>사용한 배열 메서드</th></tr></thead>
+          <tbody>
+            <tr><td><code>ADD</code></td><td><code>product</code></td><td>있으면 qty+1, 없으면 qty:1로 추가</td><td>find, map, spread</td></tr>
+            <tr><td><code>INCREASE</code></td><td><code>id</code></td><td>qty+1</td><td>map</td></tr>
+            <tr><td><code>DECREASE</code></td><td><code>id</code></td><td>qty−1, 0이면 삭제</td><td>map + filter</td></tr>
+            <tr><td><code>REMOVE</code></td><td><code>id</code></td><td>해당 상품 삭제</td><td>filter</td></tr>
+            <tr><td><code>CLEAR</code></td><td>—</td><td>빈 배열</td><td>—</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout warn">
+        <b>⚠️ 불변성(immutability)</b>
+        <code>item.qty++</code>이나 <code>state.push()</code>처럼 기존 객체·배열을 직접 고치면 React가 변경을 감지하지 못합니다. 반드시 <code>map</code>, <code>filter</code>, 전개 연산자(<code>...</code>)로 <b>새 배열·새 객체</b>를 만들어 반환하세요.
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="lesson" id="context">
+      <h2>6. Context API로 전역 상태 공유</h2>
+      <p class="goal">props를 여러 단계로 내려 주지 않고, 어느 컴포넌트에서나 장바구니에 접근합니다.</p>
+
+      <ol class="steps">
+        <li><b>만들기</b> — <code>const CartContext = createContext();</code></li>
+        <li><b>공급하기</b> — <code>&lt;CartContext.Provider value={...}&gt;</code>로 자식들을 감쌈</li>
+        <li><b>꺼내 쓰기</b> — <code>useContext(CartContext)</code>를 감싼 커스텀 훅 <code>useCart()</code></li>
+      </ol>
+
+<pre data-file="src/context/CartContext.jsx"><code><span class="kw">export function</span> CartProvider({ children }) {
+  <span class="kw">const</span> [cart, dispatch] = useReducer(cartReducer, [], loadCart);
+
+  <span class="cm">// 파생 값: state에서 계산할 수 있으면 따로 state로 두지 않는다</span>
+  <span class="kw">const</span> totalCount = cart.reduce((sum, item) =&gt; sum + item.qty, 0);
+  <span class="kw">const</span> totalPrice = cart.reduce((sum, item) =&gt; sum + item.price * item.qty, 0);
+
+  <span class="kw">return</span> (
+    &lt;CartContext.Provider value={{ cart, dispatch, totalCount, totalPrice }}&gt;
+      {children}
+    &lt;/CartContext.Provider&gt;
+  );
+}
+
+<span class="kw">export function</span> useCart() {
+  <span class="kw">return</span> useContext(CartContext);
+}</code></pre>
+
+      <h3>어디서 무엇을 꺼내 쓰나?</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>컴포넌트</th><th>사용하는 값</th><th>용도</th></tr></thead>
+          <tbody>
+            <tr><td>Header</td><td><code>totalCount</code></td><td>"장바구니 (3)" 표시</td></tr>
+            <tr><td>ProductCard / ProductDetail</td><td><code>dispatch</code></td><td>ADD</td></tr>
+            <tr><td>CartPage</td><td><code>cart</code>, <code>dispatch</code>, <code>totalPrice</code></td><td>목록, 수량 변경, 총액</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout">
+        <b>💡 reduce 읽는 법</b>
+        <code>cart.reduce((sum, item) =&gt; sum + item.qty, 0)</code> — 0에서 시작해서 항목마다 qty를 더해 나간 최종 값을 돌려줍니다.
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="lesson" id="storage">
+      <h2>7. useEffect와 localStorage로 상태 유지</h2>
+      <p class="goal">새로고침해도 장바구니가 사라지지 않도록 브라우저 저장소와 연동합니다.</p>
+
+<pre data-file="src/context/CartContext.jsx"><code><span class="kw">function</span> loadCart() {
+  <span class="kw">try</span> {
+    <span class="kw">return</span> JSON.parse(localStorage.getItem(<span class="str">"cart"</span>)) || [];
+  } <span class="kw">catch</span> {
+    <span class="kw">return</span> [];                       <span class="cm">// 저장값이 깨져 있어도 앱이 멈추지 않게</span>
+  }
+}
+
+<span class="cm">// 세 번째 인자 = 초기화 함수 (처음 한 번만 실행되는 "지연 초기화")</span>
+<span class="kw">const</span> [cart, dispatch] = useReducer(cartReducer, [], loadCart);
+
+<span class="cm">// cart가 바뀔 때마다 저장</span>
+useEffect(() =&gt; {
+  localStorage.setItem(<span class="str">"cart"</span>, JSON.stringify(cart));
+}, [cart]);</code></pre>
+
+      <div class="flow">
+        <span class="box">앱 시작</span><span class="arrow">→</span>
+        <span class="box">loadCart()로 읽기</span><span class="arrow">→</span>
+        <span class="box">사용자가 담기/삭제</span><span class="arrow">→</span>
+        <span class="box">cart 변경</span><span class="arrow">→</span>
+        <span class="box">useEffect가 저장</span>
+      </div>
+
+      <ul class="points">
+        <li>localStorage는 <b>문자열만</b> 저장하므로 <code>JSON.stringify</code> / <code>JSON.parse</code>가 필요합니다.</li>
+        <li>의존성 배열 <code>[cart]</code>: cart가 바뀔 때만 effect가 실행됩니다.</li>
+      </ul>
+    </section>
+
+    <!-- 8 -->
+    <section class="lesson" id="axios">
+      <h2>8. axios로 비동기 데이터 요청</h2>
+      <p class="goal">외부 API를 호출하고 로딩 · 에러 · 성공 세 가지 상태를 화면에 반영합니다.</p>
+
+<pre data-file="src/pages/Notice.jsx"><code><span class="kw">const</span> [posts, setPosts] = useState([]);
+<span class="kw">const</span> [loading, setLoading] = useState(<span class="kw">true</span>);
+<span class="kw">const</span> [error, setError] = useState(<span class="kw">null</span>);
+
+useEffect(() =&gt; {
+  <span class="kw">const</span> fetchPosts = <span class="kw">async</span> () =&gt; {
+    <span class="kw">try</span> {
+      <span class="kw">const</span> res = <span class="kw">await</span> axios.get(
+        <span class="str">"https://jsonplaceholder.typicode.com/posts?_limit=10"</span>
+      );
+      setPosts(res.data);                 <span class="cm">// axios는 응답 본문을 res.data에 담아 줌</span>
+    } <span class="kw">catch</span> (err) {
+      setError(<span class="str">"데이터를 불러오지 못했습니다."</span>);
+    } <span class="kw">finally</span> {
+      setLoading(<span class="kw">false</span>);                <span class="cm">// 성공이든 실패든 로딩 종료</span>
+    }
+  };
+  fetchPosts();
+}, []);                                   <span class="cm">// [] → 처음 화면에 나타날 때 한 번만</span>
+
+<span class="kw">if</span> (loading) <span class="kw">return</span> &lt;p&gt;불러오는 중...&lt;/p&gt;;
+<span class="kw">if</span> (error) <span class="kw">return</span> &lt;p className=<span class="str">"error"</span>&gt;{error}&lt;/p&gt;;</code></pre>
+
+      <div class="callout warn">
+        <b>⚠️ useEffect 콜백에 바로 async를 붙이지 않는 이유</b>
+        effect 함수는 아무것도 반환하지 않거나 정리(cleanup) 함수를 반환해야 합니다. <code>async</code> 함수는 Promise를 반환하므로, 안쪽에 async 함수를 만들어 호출하는 패턴을 사용합니다.
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="lesson" id="search">
+      <h2>9. 제어 컴포넌트와 검색 필터</h2>
+      <p class="goal">입력값을 state로 관리하고, 원본 데이터에서 걸러낸 결과를 바로 보여 줍니다.</p>
+<pre data-file="src/pages/Notice.jsx"><code><span class="kw">const</span> [keyword, setKeyword] = useState(<span class="str">""</span>);
+
+<span class="cm">// 파생 데이터: posts를 직접 바꾸지 않고 렌더링할 때마다 계산</span>
+<span class="kw">const</span> filtered = posts.filter((post) =&gt; post.title.includes(keyword));
+
+&lt;input
+  type=<span class="str">"text"</span>
+  placeholder=<span class="str">"제목 검색"</span>
+  value={keyword}                                  <span class="cm">// state → 화면</span>
+  onChange={(e) =&gt; setKeyword(e.target.value)}     <span class="cm">// 화면 → state</span>
+/&gt;
+&lt;p&gt;{filtered.length}건&lt;/p&gt;</code></pre>
+      <div class="callout">
+        <b>💡 원본은 그대로, 결과만 계산</b>
+        <code>setPosts(posts.filter(...))</code>처럼 원본을 덮어쓰면 검색어를 지웠을 때 데이터가 돌아오지 않습니다. 필터 결과는 렌더링 중에 계산하는 <b>파생 값</b>으로 두세요.
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="lesson" id="css">
+      <h2>10. 반응형 스타일</h2>
+      <p class="goal">한 장의 CSS 파일로 공통 스타일과 모바일 대응을 처리합니다.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>선택자</th><th>역할</th></tr></thead>
+          <tbody>
+            <tr><td><code>.header</code>, <code>.header nav</code></td><td>상단 로고 · 메뉴 배치</td></tr>
+            <tr><td><code>.product-list</code>, <code>.card</code></td><td>상품 카드 그리드</td></tr>
+            <tr><td><code>.category</code>, <code>.price</code></td><td>카테고리 뱃지 · 가격 강조</td></tr>
+            <tr><td><code>.cart li</code>, <code>.total</code></td><td>장바구니 행 · 총액</td></tr>
+            <tr><td><code>.error</code></td><td>에러 메시지</td></tr>
+            <tr><td><code>@media (max-width: 768px)</code></td><td>태블릿·모바일 화면에서 레이아웃 변경</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="lesson" id="practice">
+      <h2>11. 실습 과제</h2>
+      <p class="goal">완성 코드를 직접 확장해 보며 개념을 굳힙니다. 난이도 순서로 진행하세요.</p>
+      <ol class="steps">
+        <li><b>[기초]</b> 공지사항 검색이 대소문자를 구분하지 않도록 바꿔 보세요. <br/>힌트: <code>toLowerCase()</code></li>
+        <li><b>[기초]</b> 장바구니 페이지에 "총 n개" 수량을 함께 표시해 보세요. <br/>힌트: <code>useCart()</code>의 <code>totalCount</code></li>
+        <li><b>[중급]</b> 상품 목록에 카테고리 필터 버튼(전체 / 마우스 / 키보드 …)을 추가해 보세요. <br/>힌트: <code>useState</code> + <code>filter</code></li>
+        <li><b>[중급]</b> 상품 목록을 가격 낮은 순 / 높은 순으로 정렬하는 기능을 만들어 보세요. <br/>힌트: 원본을 바꾸지 않도록 <code>[...products].sort()</code></li>
+        <li><b>[심화]</b> 리듀서에 <code>SET_QTY</code> 액션을 추가해 수량을 직접 입력할 수 있게 해 보세요.</li>
+        <li><b>[심화]</b> 공지사항 항목을 클릭하면 <code>/notice/:id</code> 상세 페이지로 이동해 본문을 불러오도록 확장해 보세요.</li>
+      </ol>
+    </section>
+
+    <!-- 12 -->
+    <section class="lesson" id="review">
+      <h2>12. 정리 퀴즈</h2>
+      <p class="goal">질문을 클릭하면 정답이 펼쳐집니다.</p>
+
+      <details class="quiz">
+        <summary>Q1. ProductDetail에서 <code>Number(id)</code>를 빼면 어떻게 될까요?</summary>
+        <code>useParams()</code>의 id는 문자열이라 <code>p.id === "3"</code>이 항상 false가 됩니다. 결과적으로 모든 상세 페이지에 "상품을 찾을 수 없습니다."가 표시됩니다.
+      </details>
+      <details class="quiz">
+        <summary>Q2. 같은 상품을 두 번 담으면 장바구니 배열은 어떻게 되나요?</summary>
+        <code>ADD</code>에서 <code>find</code>로 기존 항목을 찾으므로 항목이 두 개가 되지 않고, 기존 항목의 <code>qty</code>만 2가 됩니다.
+      </details>
+      <details class="quiz">
+        <summary>Q3. 수량이 1인 상품에서 − 버튼을 누르면?</summary>
+        <code>DECREASE</code>가 qty를 0으로 만든 뒤 <code>filter(item =&gt; item.qty &gt; 0)</code>에서 제거되어 목록에서 사라집니다.
+      </details>
+      <details class="quiz">
+        <summary>Q4. <code>totalPrice</code>를 useState로 따로 관리하지 않는 이유는?</summary>
+        cart에서 언제든 계산할 수 있는 <b>파생 값</b>이기 때문입니다. 따로 state로 두면 cart와 값이 어긋날 위험이 생깁니다.
+      </details>
+      <details class="quiz">
+        <summary>Q5. Header가 장바구니 수량을 알 수 있는 원리는?</summary>
+        Header가 <code>CartProvider</code> 안쪽에 있으므로 <code>useCart()</code>로 Context 값 <code>totalCount</code>를 직접 읽습니다. cart가 바뀌면 Provider의 value가 바뀌어 Header도 다시 렌더링됩니다.
+      </details>
+      <details class="quiz">
+        <summary>Q6. Notice의 useEffect 의존성 배열을 지우면 어떤 문제가 생길까요?</summary>
+        렌더링될 때마다 effect가 실행되어 요청 → setPosts → 재렌더링 → 다시 요청이 반복되는 <b>무한 요청</b>이 발생합니다.
+      </details>
+      <details class="quiz">
+        <summary>Q7. 새로고침해도 장바구니가 유지되는 이유는?</summary>
+        cart가 바뀔 때마다 <code>useEffect</code>가 localStorage에 저장하고, 앱이 시작될 때 <code>useReducer</code>의 초기화 함수 <code>loadCart</code>가 저장된 값을 읽어 오기 때문입니다.
+      </details>
+    </section>
+
+    <footer>SPACE SHOP · React 학습 교안</footer>
+  </main>
+</div>
+</body>
+</html>
